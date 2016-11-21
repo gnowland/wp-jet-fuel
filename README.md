@@ -1,6 +1,6 @@
 # WordPress Jet Fuel #
 
-Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of too many years making one-off WordPress deep-customizations and hacking hooks, I hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
+Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of *too many* years making one-off WordPress deep-customizations and hacking hooks, I hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
 
 ## Rationale ##
 At its core, this plugin merely facilitates the addition of extended functionality to a WordPress website: Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modifications, etc.
