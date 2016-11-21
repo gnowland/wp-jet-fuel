@@ -73,22 +73,6 @@ border-color: #b4b9be;
    max-width: 100%;
 }
 
-.media-frame-title { height: 105px; }
-.media-frame-router { top: 105px; }
-.media-frame-content { top: 139px; }
-.media-frame-title::after {
-  display: inline-block;
-  line-height: 19px;
-  padding: 11px 15px;
-  font-size: 14px;
-  margin: 0 16px;
-  content: 'NOTE: Full-screen background images must be optimized and exported from PhotoShop as: JPEG, quality: 30, width: 3000, 72ppi';
-  border-left: 4px solid #ffba00;
-  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-  background-color: #fff;
-}
-
 /*
  * ACF
  */
