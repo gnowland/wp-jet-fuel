@@ -54,10 +54,20 @@ add_filter( 'hidden_meta_boxes', __NAMESPACE__ . '\\hidden_meta_boxes', 10, 2 );
  * Custom Backend Footer
  */
 function custom_admin_footer() {
-	$location  = '';
-	$author    = '';
-	$authorurl = '';
-	echo '<span id="footer-thankyou">Made with <span style="font-style:normal;font-size:0.8em;color:#D86565;">&hearts;</span> in ' + esc_attr($location) + ' by <a href="' + esc_url($authorurl) + '" target="_blank">' + esc_attr($author) + '</a></span>. ';
+	$theme = wp_get_theme();
+	if( !empty( $theme ) ) {
+		$author_location  = false; // @TODO: add field to plugin settings for these variables
+		$author_uri = $theme->get( 'AuthorURI' );
+		$author = $theme->get( 'Author' );
+
+		echo '<span id="footer-thankyou">Made with <span style="font-style:normal;font-size:0.8em;color:#D86565;">&hearts;</span>';
+		if( !empty( $author_location ) ) { echo ' in ' . esc_attr( $author_location ); }
+		if( !empty( $author) ) { echo ' by '; }
+		if( !empty( $author_uri) ) { echo '<a href="', esc_url( $author_uri ), '" target="_blank">'; }
+		if( !empty( $author) ) { echo esc_attr( $author ); }
+		if( !empty( $author_uri) ) { echo '</a>'; }
+		echo '</span>.';
+	}
 }
 add_filter('admin_footer_text', __NAMESPACE__ . '\\custom_admin_footer');
 
