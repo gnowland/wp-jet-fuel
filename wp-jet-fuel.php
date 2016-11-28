@@ -36,5 +36,22 @@ function plugin_init() {
 	foreach ( glob( $plugin_base_dir . "inc/*.php" ) as $file ) {
 	  include_once $file;
 	}
+
+	// Admin
+	if( is_admin() ) {
+		foreach ( glob( $plugin_base_dir . "inc/admin/*.php" ) as $file ) {
+			include_once $file;
+		}
+	}
+
+	// Customizer
+	foreach ( glob( $plugin_base_dir . "inc/customizer/*.php" ) as $file ) {
+		include_once $file;
+	}
+
+	// Widgets
+	foreach ( glob( $plugin_base_dir . "inc/widgets/*.php" ) as $file ) {
+		include_once $file;
+	}
 }
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\plugin_init', 11);

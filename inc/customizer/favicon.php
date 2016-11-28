@@ -44,7 +44,7 @@ function admin_favicon( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', __NAMESPACE__ . '\\admin_favicon', 1000, 1 );
+add_action( 'customize_register', __NAMESPACE__ . '\\admin_favicon', 10, 1 );
 
 /**
  *  Add admin favicon to admin pages
