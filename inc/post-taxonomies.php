@@ -29,10 +29,11 @@ function custom_taxonomies() {
 //			'name_singular' => '',
 //			'name_plural'   => '',
 //			//'menu_name'     => 'name_singular by default',
-//			'post_types'    => array(),
+//			'post_types'    => array('post_type_name'),
 //			'hierarchical'  => false,
 //			//'slug'          => 'slug by default',
-//			'show_ui'       => false
+//			//'show_ui'       => false,
+//			//public          => false
 //		)
 
 	);

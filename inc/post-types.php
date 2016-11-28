@@ -34,13 +34,13 @@ function register_custom_post_types() {
 	// Set up each post types as an array below:
 	$custom_post_types = array(
 
-//		'' => array(
+//		'_________' => array(
 //			'name_singular' => '',
 //			'name_plural'   => '',
-//			//'menu_name'		 => 'name plural by default',
+//			//'menu_name'		 => 'name_plural by default',
 //			'description'   => '',
 //			'supports'      => array(),
-//			'taxonomies'    => array(),
+//			'taxonomies'    => array('taxonomy_name'),
 //			'hierarchical'  => true,
 //			'has_archive'   => false,
 //			'dashicon'      => '',
@@ -53,15 +53,16 @@ function register_custom_post_types() {
 
 		if( isset($field['name_singular']) ){ $name_single = $field['name_singular']; } else { $name_single = ''; }
 		if( isset($field['name_plural'])   ){ $name_plural = $field['name_plural']; } else { $name_plural = ''; }
+		if( isset($field['menu_name'])     ){ $menu_name = $field['menu_name']; } else { $menu_name = $name_plural; }
 		if( isset($field['description'])   ){ $description = $field['description']; } else { $description = ''; }
 		if( isset($field['supports'])      ){ $supports = $field['supports']; } else { $supports = array('title', 'editor'); }
 		if( isset($field['taxonomies'])    ){ $taxonomies = $field['taxonomies']; } else { $taxonomies = array(); }
 		if( isset($field['hierarchical'])  ){ $hierarchical = $field['hierarchical']; } else { $hierarchical = false; }
+		if(!isset($field['has_archive'])   ){ $has_archive = $slug; } else {
+			if( $field['has_archive']        ){ $has_archive = $slug; } else { $has_archive = $field['has_archive']; }
+		}
 		if( isset($field['dashicon'])      ){ $dashicon = $field['dashicon']; } else { $dashicon = ''; }
 		if( isset($field['slug'])          ){ $slug = $field['slug']; } else { $slug = $custom_post_type; }
-		if(!isset($field['has_archive'])   ){ $has_archive = $slug; } else {
-			if( $field['has_archive']        ){ $has_archive = $slug; } else { $has_archive = $field['has_archive']; } }
-		if( isset($field['menu_name'])     ){ $menu_name = $field['menu_name']; } else { $menu_name = $name_plural; }
 
 		$labels = array(
 			'name'                => _x( $name_plural, 'Post Type General Name', 'wp-jet-fuel' ),
