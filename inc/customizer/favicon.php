@@ -49,10 +49,11 @@ add_action( 'customize_register', __NAMESPACE__ . '\\admin_favicon', 10, 1 );
 /**
  *  Add admin favicon to admin pages
  */
-function use_admin_favicon($meta_tags) {
-  $favicon_url = get_option( 'admin_favicon', '' );
-  echo '<pre>favicon url: ' . print_r($favicon_url) . '</pre>';
-  $meta_tags = array('<link rel="shortcut icon" href="' . esc_url($favicon_url) . '" />');
-  return $meta_tags;
+if( is_admin() ) {
+	function use_admin_favicon($meta_tags) {
+		$favicon_url = get_option( 'admin_favicon', '' );
+		$meta_tags = array('<link rel="shortcut icon" href="' . esc_url($favicon_url) . '" />');
+		return $meta_tags;
+	}
+	add_filter ( 'site_icon_meta_tags', __NAMESPACE__ . '\\use_admin_favicon', 10, 1 );
 }
-add_filter ( 'site_icon_meta_tags', __NAMESPACE__ . '\\use_admin_favicon' );
