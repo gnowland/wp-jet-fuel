@@ -44,6 +44,19 @@ function search() {
  */
 function site_url() {
 	$url = get_site_url();
-	return $url;
+	return esc_url($url);
 }
 add_shortcode( 'site_url', __NAMESPACE__ . '\\site_url' );
+
+/**
+ * [site-name] Shortcode
+ *
+ * Returns the site name from settings -> general.
+ *
+ * @return   string                Site Name
+ */
+function site_name() {
+	$name = get_bloginfo('name');
+	return esc_attr($name);
+}
+add_shortcode( 'site_name', __NAMESPACE__ . '\\site_name' );

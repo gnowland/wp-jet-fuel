@@ -22,3 +22,8 @@ function text_widget_php_support($text) {
 	return $text;
 }
 add_filter('widget_text', __NAMESPACE__ . '\\text_widget_php_support');
+
+/**
+ *  Enable Shortcodes in "Text" Widget
+ */
+add_filter('widget_text','do_shortcode');
