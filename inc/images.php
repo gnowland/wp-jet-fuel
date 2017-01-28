@@ -41,6 +41,17 @@ add_action( 'after_setup_theme', __NAMESPACE__ .'\\add_image_sizes' );
  */
 if( is_admin() ) {
 
+	function render_image_size_css() { ?>
+		<style>
+			.registered-image-sizes td { padding-top: 0; padding-bottom: 2px; }
+			.registered-image-sizes thead { font-weight: 600; }
+			.registered-image-sizes tbody tr td:not(:first-of-type) { text-align: center; }
+			.registered-image-sizes td:first-of-type { padding-left: 0; }
+		</style>
+	<?php
+	}
+	add_action( 'admin_head-options-media.php', __NAMESPACE__ . '\\render_image_size_css' );
+
 	function sort_by_width($a, $b) {
 		return $a['width'] - $b['width'];
 	}
@@ -75,16 +86,6 @@ if( is_admin() ) {
 
 		return $sizes;
 	}
-
-	function render_image_size_css() { ?>
-		<style>
-			.registered-image-sizes td { padding-top: 0; padding-bottom: 2px; }
-			.registered-image-sizes thead { font-weight: 600; }
-			.registered-image-sizes tbody tr td:not(:first-of-type) { text-align: center; }
-		</style>
-	<?php
-	}
-	add_action( 'admin_head-options-media.php', __NAMESPACE__ . '\\render_image_size_css' );
 
 	function render_image_sizes() {
 		$image_sizes = get_image_sizes();
