@@ -34,3 +34,77 @@ function add_image_sizes(){
 //									'original'						 3000+
 }
 add_action( 'after_setup_theme', __NAMESPACE__ .'\\add_image_sizes' );
+
+
+/**
+ * Display all registered image sizes in Settings > Media
+ */
+if( is_admin() ) {
+
+	function sort_by_width($a, $b) {
+		return $a['width'] - $b['width'];
+	}
+
+	function get_image_sizes() {
+		global $_wp_additional_image_sizes;
+		$sizes = array();
+		$image_sizes = get_intermediate_image_sizes();
+
+		if( ! empty( $image_sizes ) && ( is_array( $image_sizes ) || is_object( $image_sizes ) ) ) {
+			foreach( $image_sizes as $image_size ) {
+				if ( in_array( $image_size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
+					$sizes[ $image_size ]['width'] = get_option( $image_size . '_size_w' );
+					$sizes[ $image_size ]['height'] = get_option( $image_size . '_size_h' );
+					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['width'] == 0 ) {
+						$sizes[ $image_size ]['width'] = '768';
+					}
+					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['height'] == 0 ) {
+						$sizes[ $image_size ]['height'] = '9999';
+					}
+				} elseif ( isset( $_wp_additional_image_sizes[ $image_size ] ) ) {
+					$sizes[ $image_size ] = array(
+						'width' => $_wp_additional_image_sizes[ $image_size ]['width'],
+						'height' => $_wp_additional_image_sizes[ $image_size ]['height'],
+					);
+				}
+			}
+		}
+
+		uasort($sizes, __NAMESPACE__ . '\\sort_by_width');
+
+		return $sizes;
+	}
+
+	function render_image_size_css() { ?>
+		<style>
+			.registered-image-sizes td { padding-top: 0; padding-bottom: 2px; }
+			.registered-image-sizes thead { font-weight: 600; }
+			.registered-image-sizes tbody tr td:not(:first-of-type) { text-align: center; }
+		</style>
+	<?php
+	}
+	add_action( 'admin_head-options-media.php', __NAMESPACE__ . '\\render_image_size_css' );
+
+	function render_image_sizes() {
+		$image_sizes = get_image_sizes();
+
+		$output = '<table class="registered-image-sizes"><thead><tr><td>' . __('Name', 'wp-jet-fuel') . '</td><td>' . __('Width', 'wp-jet-fuel') . '</td><td>' . __('Height', 'wp-jet-fuel') . '</td></tr></thead><tbody>';
+		foreach ( $image_sizes as $size => $dimensions ) {
+			$output .= '<tr><td>' . esc_attr($size) . '</td><td>' . (int) $dimensions['width'] . '</td><td>' . (int) $dimensions['height'] . '</td></tr></li>';
+		}
+		$output .= '</tbody></table>';
+
+		echo $output;
+	}
+
+	function image_sizes() {
+		add_settings_field(
+			'image-sizes',
+			__('Registered Sizes', 'wp-jet-fuel'),
+			__NAMESPACE__ . '\\render_image_sizes',
+			'media',
+			'default'
+		);
+	}
+	add_action( 'admin_init', __NAMESPACE__ . '\\image_sizes' );
+}
