@@ -14,13 +14,7 @@ Here's what some intellegent people say on the subject:
 
 ## Installation ##
 
-Come on dude, it's a WordPress plugin, you know what to do.
-
-Option 1:
-- Clone into your plugins folder and activate as usual (may I suggest wp-cli?).
-
-Option 2:
-- Download the repo as a zip file and upload to your site through the admin panel or FTP. Activate as usual.
+`git clone` into `wp-content/plugins/` or download the repo as a zip file and upload to your site via FTP or through the WordPress Admin Panel. Activate via the Admin Panel or (and my personal favorite) by using [wp-cli](http://wp-cli.org/) over ssh (`wp plugin activate wp-jet-fuel`).
 
 ## Contribution ##
 
