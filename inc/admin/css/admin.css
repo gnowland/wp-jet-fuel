@@ -1,5 +1,6 @@
 .inline-block { display: inline-block; }
 .mb0 { margin-bottom: 0; }
+.pre { font-family: monospace; font-style: normal; font-weight: normal; padding-left: 0.5em; }
 
 /*
  * Custom Category Metaboxes
