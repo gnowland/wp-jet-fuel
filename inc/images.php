@@ -53,18 +53,19 @@ if( is_admin() ) {
 		if( ! empty( $image_sizes ) && ( is_array( $image_sizes ) || is_object( $image_sizes ) ) ) {
 			foreach( $image_sizes as $image_size ) {
 				if ( in_array( $image_size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
-					$sizes[ $image_size ]['width'] = get_option( $image_size . '_size_w' );
+					$sizes[ $image_size ]['width']  = get_option( $image_size . '_size_w' );
 					$sizes[ $image_size ]['height'] = get_option( $image_size . '_size_h' );
-					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['width'] == 0 ) {
-						$sizes[ $image_size ]['width'] = '768';
-					}
-					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['height'] == 0 ) {
-						$sizes[ $image_size ]['height'] = '9999';
-					}
+					$sizes[ $image_size ]['crop']   = get_option( $image_size . '_crop' );
+
+					// Set defaults for medium_large
+					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['width'] == 0 ) { $sizes[ $image_size ]['width'] = '768'; }
+					if ( $image_size === 'medium_large' && $sizes[ $image_size ]['height'] == 0 ) { $sizes[ $image_size ]['height'] = '9999'; }
+
 				} elseif ( isset( $_wp_additional_image_sizes[ $image_size ] ) ) {
 					$sizes[ $image_size ] = array(
-						'width' => $_wp_additional_image_sizes[ $image_size ]['width'],
+						'width'  => $_wp_additional_image_sizes[ $image_size ]['width'],
 						'height' => $_wp_additional_image_sizes[ $image_size ]['height'],
+						'crop'   => $_wp_additional_image_sizes[ $image_size ]['crop']
 					);
 				}
 			}
@@ -88,9 +89,15 @@ if( is_admin() ) {
 	function render_image_sizes() {
 		$image_sizes = get_image_sizes();
 
-		$output = '<table class="registered-image-sizes"><thead><tr><td>' . __('Name', 'wp-jet-fuel') . '</td><td>' . __('Width', 'wp-jet-fuel') . '</td><td>' . __('Height', 'wp-jet-fuel') . '</td></tr></thead><tbody>';
-		foreach ( $image_sizes as $size => $dimensions ) {
-			$output .= '<tr><td>' . esc_attr($size) . '</td><td>' . (int) $dimensions['width'] . '</td><td>' . (int) $dimensions['height'] . '</td></tr></li>';
+		$output = '<table class="registered-image-sizes"><thead><tr><td>' . __('Name', 'wp-jet-fuel') . '</td><td>' . __('Width', 'wp-jet-fuel') . '</td><td>' . __('Height', 'wp-jet-fuel') . '</td><td>' . __('Crop', 'wp-jet-fuel') . '</td></tr></thead><tbody>';
+		foreach ( $image_sizes as $size => $meta ) {
+			$output .= '<tr><td>' . esc_attr($size) . '</td><td>' . (int) $meta['width'] . '</td><td>' . (int) $meta['height'] . '</td><td>';
+
+			if( (bool) $meta['crop'] === true ) {
+				$output .= '&#x2713;';
+			}
+
+			$output .= '</td></tr></li>';
 		}
 		$output .= '</tbody></table>';
 
