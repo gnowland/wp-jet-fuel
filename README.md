@@ -1,4 +1,6 @@
-# WordPress Jet Fuel #
+# WordPress Jet Fuel (alpha) #
+
+> PLEASE NOTE: This plugin is _very much in active development_ and major functionality will be changed/removed/added without prior notice. That said, pull requests and issues are welcome and will certainly help steer the course towards a stable release!
 
 Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of *too many* years making one-off WordPress deep-customizations and hacking hooks, I hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
 
@@ -28,7 +30,7 @@ There's no draconian PR standard, if I can't figure out something in your PR we 
 #### About PHP Namespacing:
 
 New to Namespacing? No worries! Just Use `__NAMESPACE__ . '\\` to refer to function names in hooks and such, i.e.:
-    
+
     add_action('hook_action_name', __NAMESPACE__ . '\\function_name');
 
 ## Attribution ##
