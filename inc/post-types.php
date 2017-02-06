@@ -27,8 +27,9 @@ function register_custom_post_types() {
 
 	/**
 	 * Available "Supports":
-	 * 'title', 'editor', 'author', thumbnail',	'excerpt', 'trackbacks', 'custom-fields' (metadata), 'comments', 'revisions',
-	 * 'page-attributes' (template, menu order) (hierarchical must be TRUE), 'post-formats' (aside, gallery, link, image, quote, status, video, audio, chat)
+	 *   'title', 'editor', 'author', thumbnail', 'excerpt', 'trackbacks', 'custom-fields' (metadata), 'comments', 'revisions',
+	 *     'page-attributes' (template, menu order) (...only appears when hierarchical is set to 'true'),
+	 *     'post-formats' (aside, gallery, link, image, quote, status, video, audio, chat)
 	 */
 
 	// Set up each post types as an array below:
