@@ -59,11 +59,11 @@ function register_custom_post_types() {
 		if( isset($field['supports'])      ){ $supports = $field['supports']; } else { $supports = array('title', 'editor'); }
 		if( isset($field['taxonomies'])    ){ $taxonomies = $field['taxonomies']; } else { $taxonomies = array(); }
 		if( isset($field['hierarchical'])  ){ $hierarchical = $field['hierarchical']; } else { $hierarchical = false; }
+		if( isset($field['slug'])          ){ $slug = $field['slug']; } else { $slug = $custom_post_type; } // must set before has_archive
 		if(!isset($field['has_archive'])   ){ $has_archive = $slug; } else {
 			if( $field['has_archive']        ){ $has_archive = $slug; } else { $has_archive = $field['has_archive']; }
 		}
 		if( isset($field['dashicon'])      ){ $dashicon = $field['dashicon']; } else { $dashicon = ''; }
-		if( isset($field['slug'])          ){ $slug = $field['slug']; } else { $slug = $custom_post_type; }
 
 		$labels = array(
 			'name'                => _x( $name_plural, 'Post Type General Name', 'wp-jet-fuel' ),
