@@ -3,14 +3,14 @@
 /**
  *
  * @link    https://github.com/gnowland/wp-jet-fuel
- * @since   0.0.1
+ * @since   0.1.0
  * @package WPJetFuel
  *
  * @wordpress-plugin
  * Plugin Name:  WordPress Jet Fuel
  * Plugin URI:   https://github.com/gnowland/wp-jet-fuel
  * Description:  Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
- * Version:      0.0.1
+ * Version:      0.1.0
  * Author:       Gifford Nowland
  * Author URI:   http://giffordnowland.com/
  * License:      MIT
