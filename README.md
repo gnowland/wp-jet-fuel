@@ -1,4 +1,5 @@
 # WordPress Jet Fuel (alpha) #
+[![Packagist](https://img.shields.io/packagist/v/gnowland/wp-jet-fuel.svg?style=flat-square)](https://packagist.org/packages/gnowland/wp-jet-fuel)
 
 > PLEASE NOTE: This plugin is _very much in active development_ and major functionality will be changed/removed/added without prior notice. That said, pull requests and issues are welcome and will certainly help steer the course towards a stable release!
 
