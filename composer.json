@@ -1,0 +1,19 @@
+{
+  "name": "gnowland/wp-jet-fuel",
+  "description": "Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.",
+  "keywords": ["wordpress", "plugin", "gnowland"],
+  "homepage": "https://github.com/gnowland/wp-jet-fuel",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gifford Nowland",
+      "email": "hi@giffordnowland.com",
+      "homepage": "http://giffordnowland.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.2",
+    "composer/installers": "~1.0.6"
+  }
+}
