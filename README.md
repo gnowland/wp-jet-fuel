@@ -17,7 +17,28 @@ Here's what some intellegent people say on the subject:
 
 ## Installation ##
 
-`git clone` into `wp-content/plugins/` or download the repo as a zip file and upload to your site via FTP or through the WordPress Admin Panel. Activate via the Admin Panel or (and my personal favorite) by using [wp-cli](http://wp-cli.org/) over ssh (`wp plugin activate wp-jet-fuel`).
+### Composer ###
+
+    $ composer require gnowland/wp-jet-fuel
+
+Activate with [wp-cli](http://wp-cli.org/)
+
+    $ wp plugin activate wp-jet-fuel
+
+### Git ###
+
+* `git clone` into your sites plugin folder
+* Activate via WordPress or wp-cli (see above)
+
+### Manual ###
+
+* Download the [zip file](https://github.com/gnowland/wp-jet-fuel/archive/master.zip)
+* Unzip to your sites plugin folder
+* Activate via WordPress or wp-cli (see above)
+
+## Updates ##
+
+Includes support for [github-updater](https://github.com/afragen/github-updater) to keep track of updates through the WordPress admin.
 
 ## Contribution ##
 
