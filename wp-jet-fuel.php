@@ -3,29 +3,23 @@
 /**
  *
  * @wordpress-plugin
- * Plugin Name:  WordPress Jet Fuel
- * Plugin URI:   https://github.com/gnowland/wp-jet-fuel
- * Description:  Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
- * Version:      0.2.0
- * Author:       Gifford Nowland
- * Author URI:   http://giffordnowland.com/
- * License:      MIT
- *
- * Text Domain:  jetfuel
- * Domain Path:  /languages
- *
- * GitHub Plugin URI: gnowland/wp-jet-fuel
- * GitHub Plugin URI: https://github.com/gnowland/wp-jet-fuel
- *
- * @link    https://github.com/gnowland/wp-jet-fuel
- * @package WordPress
- * @subpackage WPJetFuel
+ * Plugin Name:         WordPress Jet Fuel
+ * Plugin URI:          https://github.com/gnowland/wp-jet-fuel
+ * Description:         Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
+ * Version:             0.2.0
+ * Author:              Gifford Nowland
+ * Author URI:          http://giffordnowland.com/
+ * License:             MIT License
+ * License URI:         http://opensource.org/licenses/MIT
+ * GitHub Plugin URI:   gnowland/wp-jet-fuel
+ * GitHub Plugin URI:   https://github.com/gnowland/wp-jet-fuel
+ * Text Domain:         jetfuel
+ * Domain Path:         /languages
  *
  * Attribution:
  * I owe a ton of inspiration for version 0.2.0 of the plugin to https://github.com/soberwp/intervention
  *
-*/
-
+ */
 namespace Gnowland\JetFuel;
 
 // If this file is called directly, abort.
