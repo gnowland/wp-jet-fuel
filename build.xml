@@ -14,7 +14,12 @@
   </target>
 
   <target name="composer">
-    <exec passthru="true" checkreturn="false" command="php ${php_bin_path}/composer.phar update --no-dev --optimize-autoloader --prefer-dist --no-interaction"/>
+    <composer command="update" composer="${php_bin_path}/composer.phar">
+      <arg value="--no-dev"/>
+      <arg value="--optimize-autoloader"/>
+      <arg value="--prefer-dist"/>
+      <arg value="--no-interaction"/>
+    </composer>
   </target>
 
   <target name="transfer">
