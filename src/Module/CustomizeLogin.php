@@ -28,70 +28,64 @@ class CustomizeLogin extends Instance {
   }
 
   protected function hook() {
+    // add customizer panel to choose login logo
     add_action( 'customize_register', [$this, 'customizeLogin'], 1000, 1 );
+    // change login page logo to the one set in the customizer
+    add_action( 'login_head', [$this, 'loginImage'] );
+    // change the alt text on the logo to show your site name
+    add_filter( 'login_headertitle', function() { return get_option('blogname'); } );
+    // change the logo link from wordpress.org to your site
+    add_filter( 'login_headerurl', function() { return home_url(); } );
   }
 
   public function customizeLogin($wp_customize) {
 
     // Add customizer section
-    $wp_customize->add_section( 'login_logo_section', array(
+    $wp_customize->add_section( 'login_page', [
       'title'       => __( 'Login Page', 'jetfuel' ),
       'priority'    => 30,
       'description' => __( 'Customize the login page', 'jetfuel' ),
-    ));
+    ]);
 
-    // Register customizer section
-    $wp_customize->add_setting( new Custom_Setting_Image_Data(
-      $wp_customize,
-      'login_logo',
-      array(
-        'default' => get_theme_mod( 'login_logo', '' )
-      )
-    ));
+    // Register customizer setting
+    $wp_customize->add_setting( 'jetfuel_login_logo', [
+      'type'  => 'option',
+      'capability' => 'manage_options',
+      'default' => get_option( 'jetfuel_login_logo', '' ),
+      'sanitize_callback' => 'absint'
+    ]);
 
     // Add image uploader
-    $wp_customize->add_control( new \WP_Customize_Image_Control(
+    $wp_customize->add_control( new \WP_Customize_Media_Control(
       $wp_customize,
-      'login_logo_control',
+      'login_logo_file',
       array(
         'label'       =>  __( 'Logo', 'jetfuel' ),
-        'section'     =>  'login_logo_section',
-        'settings'    =>  'login_logo',
+        'section'     =>  'login_page',
+        'settings'    =>  'jetfuel_login_logo',
         'description' =>  __( 'Upload a logo to display on the login page', 'jetfuel' )
       )
     ));
   }
-}
 
-class Custom_Setting_Image_Data extends \WP_Customize_Setting {
-  // Overwrites the `update()` method so we can save some extra data.
-  protected function update( $value ) {
-
-    if ( $value ) {
-      $post_id = attachment_url_to_postid( $value );
-
-      if ( $post_id ) {
-        $image = wp_get_attachment_image_src( $post_id, [640, 9999] );
-
-        if ( $image ) {
-          // Set up a custom array of data to save.
-          $data = array(
-            'url'    => esc_url_raw( $image[0] ),
-            'width'  => absint( $image[1] ),
-            'height' => absint( $image[2] ),
-            'id'     => absint( $post_id )
-          );
-
-          set_theme_mod( "{$this->id_data[ 'base' ]}_data", $data );
+  public function loginImage() {
+    if( !empty( $logo_id = get_option('jetfuel_login_logo') ) ) {
+      $logo_array = wp_get_attachment_image_src($logo_id, [640,9999]);
+      $logo_url = $logo_array[0];
+      $image_ratio = 100 * ( $logo_array[2] / $logo_array[1] );
+      echo '<style>
+        .login h1 a {
+          background-image: url( ' . esc_url($logo_url) . ' ) !important;
+          width: 100%;
+          background-size: cover;
+          height: 0;
+          padding: 0;
+          padding-bottom: ' . floatval($image_ratio) . '%;
         }
-      }
+        .interim-login h1 a {
+          margin-bottom: 0;
+        }
+      </style>';
     }
-
-    // No media? Remove the data mod.
-    if ( empty( $value ) || empty( $post_id ) || empty( $image ) )
-        remove_theme_mod( "{$this->id_data[ 'base' ]}_data" );
-
-    // Let's send this back up and let the parent class do its thing.
-    return parent::update( $value );
   }
 }
