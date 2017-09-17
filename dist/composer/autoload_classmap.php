@@ -92,7 +92,6 @@ return array(
     'Composer\\Installers\\ZendInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
     'Composer\\Installers\\ZikulaInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
     'Gnowland\\JetFuel\\Instance' => $baseDir . '/src/Instance.php',
-    'Gnowland\\JetFuel\\Module\\Custom_Setting_Image_Data' => $baseDir . '/src/Module/CustomizeLogin.php',
     'Gnowland\\JetFuel\\Module\\CustomizeLogin' => $baseDir . '/src/Module/CustomizeLogin.php',
     'Gnowland\\JetFuel\\Utils' => $baseDir . '/src/Utils.php',
 );

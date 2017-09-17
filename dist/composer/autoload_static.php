@@ -124,7 +124,6 @@ class ComposerStaticInitdf5e57778ba73f5593b0f79bb340972a
         'Composer\\Installers\\ZendInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
         'Gnowland\\JetFuel\\Instance' => __DIR__ . '/../..' . '/src/Instance.php',
-        'Gnowland\\JetFuel\\Module\\Custom_Setting_Image_Data' => __DIR__ . '/../..' . '/src/Module/CustomizeLogin.php',
         'Gnowland\\JetFuel\\Module\\CustomizeLogin' => __DIR__ . '/../..' . '/src/Module/CustomizeLogin.php',
         'Gnowland\\JetFuel\\Utils' => __DIR__ . '/../..' . '/src/Utils.php',
     );
