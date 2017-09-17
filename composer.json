@@ -21,6 +21,9 @@
     "php": ">=5.4.0",
     "composer/installers": "~1.0"
   },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*"
+  },
   "autoload": {
     "psr-4": {
       "Gnowland\\JetFuel\\": "src/",
@@ -31,6 +34,8 @@
     ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": [
+      "vendor/bin/phpcs --extensions=php --ignore=vendor/ ."
+    ]
   }
 }
