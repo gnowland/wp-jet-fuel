@@ -49,6 +49,10 @@ Heck yea! Baby, we're better together.
 
 There's no draconian PR standard, if I can't figure out something in your PR we can work it out together.
 
+### Build ###
+
+    $ phing
+
 #### About PHP Namespacing:
 
 New to Namespacing? No worries! Just Use `__NAMESPACE__ . '\\` to refer to function names in hooks and such, i.e.:
