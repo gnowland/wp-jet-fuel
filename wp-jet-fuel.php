@@ -22,8 +22,14 @@
  */
 namespace Gnowland\JetFuel;
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) die('Abort!');
+/**
+ * Plugin
+ */
+if (!defined('ABSPATH')) {
+    die;
+};
+
+require(file_exists($composer = __DIR__ . '/vendor/autoload.php') ? $composer : __DIR__ . '/dist/autoload.php');
 
 /**
  * Setup $loader object from function jetfuel
@@ -31,8 +37,7 @@ if ( ! defined( 'WPINC' ) ) die('Abort!');
  * @param string $module
  * @param string|array $config
  */
-function jetfuel($module = false, $config = false )
-{
+function jetfuel($module = false, $config = false) {
     $class = __NAMESPACE__ . '\Module\\' . str_replace('-', '', ucwords($module, '-'));
     $instance = (new $class($config))->run();
 }
