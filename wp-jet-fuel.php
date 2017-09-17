@@ -14,6 +14,9 @@
  * Text Domain:  jetfuel
  * Domain Path:  /languages
  *
+ * GitHub Plugin URI: gnowland/wp-jet-fuel
+ * GitHub Plugin URI: https://github.com/gnowland/wp-jet-fuel
+ *
  * @link    https://github.com/gnowland/wp-jet-fuel
  * @package WordPress
  * @subpackage WPJetFuel
