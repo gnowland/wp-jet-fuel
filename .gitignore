@@ -30,6 +30,7 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
+.vscode
 _notes
 dwsync.xml
 *.komodoproject
