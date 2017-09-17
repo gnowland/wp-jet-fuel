@@ -9,10 +9,13 @@
  * Version:             0.2.0
  * Author:              Gifford Nowland
  * Author URI:          http://giffordnowland.com/
+ *
  * License:             MIT License
  * License URI:         http://opensource.org/licenses/MIT
+ *
  * GitHub Plugin URI:   gnowland/wp-jet-fuel
- * GitHub Plugin URI:   https://github.com/gnowland/wp-jet-fuel
+ * GitHub Branch:       0.2.0
+ *
  * Text Domain:         jetfuel
  * Domain Path:         /languages
  *
