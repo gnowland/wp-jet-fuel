@@ -12,6 +12,9 @@ use Gnowland\JetFuel\Instance;
  * @example jetfuel('customize-login');
  *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
+ * @link https://developer.wordpress.org/reference/hooks/login_head/
+ * @link https://developer.wordpress.org/reference/hooks/login_headertitle/
+ * @link https://developer.wordpress.org/reference/hooks/login_headerurl/
  *
  * @package WordPress
  * @subpackage WPJetFuel
