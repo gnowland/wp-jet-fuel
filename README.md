@@ -5,6 +5,13 @@
 
 Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of *too many* years making one-off WordPress deep-customizations and hacking hooks, I hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
 
+## Complementary Plugins ##
+
+The following plugins are particularly complementary; in fact a notable number of 0.1.0 actions were dropped in 0.2.0 in favor of using the methods from these fantastic plugins instead!
+
+* Admin cleanup &amp; modifications:<br>[soberwp/intervention](https://github.com/soberwp/intervention)
+* Custom post types &amp; taxonomies:<br>[soberwp/models](https://github.com/soberwp/models)
+
 ## Rationale ##
 At its core, this plugin merely facilitates the addition of extended functionality to a WordPress website: Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modifications, etc.
 
