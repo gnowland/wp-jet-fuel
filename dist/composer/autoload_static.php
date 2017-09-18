@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit566b4f669af6e742b4497c157a662d6d
+class ComposerStaticInit89badb66a6055f044d133069103048ad
 {
     public static $files = array (
         '05dd28aca5136e4de2cf8463b8491974' => __DIR__ . '/../..' . '/wp-jet-fuel.php',
@@ -124,18 +124,21 @@ class ComposerStaticInit566b4f669af6e742b4497c157a662d6d
         'Composer\\Installers\\ZendInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
         'Gnowland\\JetFuel\\Instance' => __DIR__ . '/../..' . '/src/Instance.php',
+        'Gnowland\\JetFuel\\Module\\AddShortcodes' => __DIR__ . '/../..' . '/src/Module/AddShortcodes.php',
+        'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => __DIR__ . '/../..' . '/src/Module/CustomizeAdminFavicon.php',
         'Gnowland\\JetFuel\\Module\\CustomizeLogin' => __DIR__ . '/../..' . '/src/Module/CustomizeLogin.php',
-        'Gnowland\\JetFuel\\Module\\OrderTerms' => __DIR__ . '/../..' . '/src/Module/OrderTerms.php',
-        'Gnowland\\JetFuel\\Module\\RemoveArchivePrefix' => __DIR__ . '/../..' . '/src/Module/RemoveArchivePrefix.php',
+        'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => __DIR__ . '/../..' . '/src/Module/RemoveArchivePrefixes.php',
+        'Gnowland\\JetFuel\\Module\\ReorderTerms' => __DIR__ . '/../..' . '/src/Module/ReorderTerms.php',
+        'Gnowland\\JetFuel\\Module\\UnlockWidgetText' => __DIR__ . '/../..' . '/src/Module/EnableWidgetTextCode.php',
         'Gnowland\\JetFuel\\Utils' => __DIR__ . '/../..' . '/src/Utils.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit566b4f669af6e742b4497c157a662d6d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit566b4f669af6e742b4497c157a662d6d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit566b4f669af6e742b4497c157a662d6d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit89badb66a6055f044d133069103048ad::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit89badb66a6055f044d133069103048ad::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit89badb66a6055f044d133069103048ad::$classMap;
 
         }, null, ClassLoader::class);
     }

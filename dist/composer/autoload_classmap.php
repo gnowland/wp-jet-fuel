@@ -92,8 +92,11 @@ return array(
     'Composer\\Installers\\ZendInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
     'Composer\\Installers\\ZikulaInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
     'Gnowland\\JetFuel\\Instance' => $baseDir . '/src/Instance.php',
+    'Gnowland\\JetFuel\\Module\\AddShortcodes' => $baseDir . '/src/Module/AddShortcodes.php',
+    'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => $baseDir . '/src/Module/CustomizeAdminFavicon.php',
     'Gnowland\\JetFuel\\Module\\CustomizeLogin' => $baseDir . '/src/Module/CustomizeLogin.php',
-    'Gnowland\\JetFuel\\Module\\OrderTerms' => $baseDir . '/src/Module/OrderTerms.php',
-    'Gnowland\\JetFuel\\Module\\RemoveArchivePrefix' => $baseDir . '/src/Module/RemoveArchivePrefix.php',
+    'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => $baseDir . '/src/Module/RemoveArchivePrefixes.php',
+    'Gnowland\\JetFuel\\Module\\ReorderTerms' => $baseDir . '/src/Module/ReorderTerms.php',
+    'Gnowland\\JetFuel\\Module\\UnlockWidgetText' => $baseDir . '/src/Module/EnableWidgetTextCode.php',
     'Gnowland\\JetFuel\\Utils' => $baseDir . '/src/Utils.php',
 );
