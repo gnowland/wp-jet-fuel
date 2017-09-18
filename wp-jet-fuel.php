@@ -42,5 +42,7 @@ if (!defined('ABSPATH')) {
  */
 function jetfuel($module = false, $config = false) {
     $class = __NAMESPACE__ . '\Module\\' . str_replace('-', '', ucwords($module, '-'));
-    $instance = (new $class($config))->run();
+    if (class_exists($class)) {
+        $instance = (new $class($config))->run();
+    }
 }
