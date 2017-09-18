@@ -10,6 +10,7 @@ use Gnowland\JetFuel\Instance;
  * Prevent WordPress from re-ordering terms checklist
  *
  * @example jetfuel('reorder-terms', $config(bool));
+ * @param   bool $config  false
  *
  * @link https://developer.wordpress.org/reference/hooks/wp_terms_checklist_args/
  *
