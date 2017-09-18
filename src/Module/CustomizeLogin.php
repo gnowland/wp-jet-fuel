@@ -64,9 +64,9 @@ class CustomizeLogin extends Instance {
       'login_logo_file',
       array(
         'label'       =>  __( 'Logo', 'jetfuel' ),
+        'description' =>  __( 'Upload a logo to display on the login page', 'jetfuel' ),
         'section'     =>  'login_page',
-        'settings'    =>  'jetfuel_login_logo',
-        'description' =>  __( 'Upload a logo to display on the login page', 'jetfuel' )
+        'settings'    =>  'jetfuel_login_logo'
       )
     ));
   }
