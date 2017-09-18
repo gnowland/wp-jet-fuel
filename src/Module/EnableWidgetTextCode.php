@@ -45,11 +45,12 @@ class UnlockWidgetText extends Instance {
 
   // Allow PHP in 'Text' Widget
   public function widgetTextSupportPhp($text) {
-    ob_start();
-      eval( '?>' . $text );
+    if(strpos($text,"<"."?php")!==false){
+      ob_start();
+      eval("?".">".$text);
       $text = ob_get_contents();
-    ob_end_clean();
-
+      ob_end_clean();
+    }
     return $text;
   }
 
