@@ -52,24 +52,24 @@ class CustomizeAdminFavicon extends Instance {
      ) );
 
     // Add image uploader
-    $wp_customize->add_control( new \WP_Customize_Site_Icon_Control( $wp_customize, 'admin_favicon', array(
+    $wp_customize->add_control( new \WP_Customize_Image_Control( $wp_customize, 'admin_favicon', array(
       'label'       => __( 'Admin Favicon', 'jetfuel' ),
-      'description' => __( 'Favicons must be square, .ico format. 48x48px grayscale image suggested.', 'jetfuel' ),
       'description' => sprintf(
         /* translators: %s: site icon size in pixels */
-        __( 'The Admin Favicon is used as a browser icon for the admin panel. Icons <strong>MUST BE .ico FORMAT</strong>, square, exactly %s pixels wide and tall, and a different color from your public Site Icon (grayscale suggested)', 'jetfuel' ),
+        __( 'The Admin Favicon is used as a browser icon for the admin panel. Icons <strong>MUST BE .ico</strong> format, square, and pre-cropped to %s pixels wide and tall, and a different color from your public Site Icon (grayscale suggested)', 'jetfuel' ),
         '<strong>48</strong>'
       ),
       'section'     => 'title_tagline',
       'settings'    => 'jetfuel_admin_favicon',
       'priority'    => 70,
       'height'      => 48,
-      'width'       => 48
+      'width'       => 48,
+      'mime_type'   => 'image/x-icon'
     ) ) );
   }
 
   public function useAdminFavicon($meta_tags) {
-    $favicon_url = get_option( 'admin_favicon', '' );
+    $favicon_url = get_option( 'jetfuel_admin_favicon', '' );
     $meta_tags = array('<link rel="shortcut icon" href="' . esc_url($favicon_url) . '" />');
     return $meta_tags;
   }
