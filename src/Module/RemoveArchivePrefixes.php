@@ -5,12 +5,12 @@ namespace Gnowland\JetFuel\Module;
 use Gnowland\JetFuel\Instance;
 
 /**
- * Module: remove-archive-prefix
+ * Module: remove-archive-prefixes
  *
  * Filter get_the_archive_title() function to remove displaying the strings
  * "Category:", "Tag:", "Author:", or "Archives:" before archive page titles.
  *
- * @example jetfuel('remove-archive-prefix');
+ * @example jetfuel('remove-archive-prefixes');
  *
  * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
  *
@@ -18,7 +18,7 @@ use Gnowland\JetFuel\Instance;
  * @subpackage WPJetFuel
  * @since 0.2.0
  */
-class RemoveArchivePrefix extends Instance {
+class RemoveArchivePrefixes extends Instance {
     public function run() {
         $this->setup()->hook();
     }
@@ -29,10 +29,10 @@ class RemoveArchivePrefix extends Instance {
     }
 
     protected function hook() {
-        add_filter('get_the_archive_title', [$this, 'removeArchivePrefix']);
+        add_filter('get_the_archive_title', [$this, 'removeArchivePrefixes']);
     }
 
-    public function removeArchivePrefix($title) {
+    public function removeArchivePrefixes($title) {
         if ( is_category() ) {
           $title = single_cat_title( '', false );
         } elseif ( is_tag() ) {
