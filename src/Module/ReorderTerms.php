@@ -5,11 +5,11 @@ namespace Gnowland\JetFuel\Module;
 use Gnowland\JetFuel\Instance;
 
 /**
- * Module: order-terms
+ * Module: reorder-terms
  *
  * Prevent WordPress from re-ordering terms checklist
  *
- * @example jetfuel('order-terms');
+ * @example jetfuel('reorder-terms', $config(bool));
  *
  * @link https://developer.wordpress.org/reference/hooks/wp_terms_checklist_args/
  *
@@ -17,22 +17,22 @@ use Gnowland\JetFuel\Instance;
  * @subpackage WPJetFuel
  * @since 0.2.0
  */
-class OrderTerms extends Instance {
+class ReorderTerms extends Instance {
     public function run() {
         $this->setup()->hook();
     }
 
     protected function setup() {
-        $this->setDefaultConfig('');
+        $this->setDefaultConfig('false');
         return $this;
     }
 
     protected function hook() {
-        add_filter('wp_terms_checklist_args', [$this, 'orderTerms']);
+        add_filter('wp_terms_checklist_args', [$this, 'reorderTerms']);
     }
 
-    public function orderTerms($args) {
-        $args['checked_ontop'] = false;
+    public function reorderTerms($args) {
+        $args['checked_ontop'] = $this->config;
         return $args;
     }
 }
