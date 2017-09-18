@@ -30,14 +30,14 @@ class CustomizeAdminFavicon extends Instance {
 
   protected function hook() {
     // add customizer setting to choose a favicon
-    add_action( 'customize_register', [$this, 'addAdminFavicon']);
+    add_action( 'customize_register', [$this, 'customizeAdminFavicon']);
     // add favicon to admin pages
     if (is_admin()) {
       add_filter ('site_icon_meta_tags', [$this, 'useAdminFavicon']);
     }
   }
 
-  public function addAdminFavicon($wp_customize) {
+  public function customizeAdminFavicon($wp_customize) {
 
     // Register customizer setting
     $wp_customize->add_setting( 'jetfuel_admin_favicon', array(
