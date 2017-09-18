@@ -13,6 +13,7 @@ use Gnowland\JetFuel\Instance;
  *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @link https://developer.wordpress.org/reference/hooks/site_icon_meta_tags/
+ * @link https://developer.wordpress.org/reference/hooks/upload_mimes/
  *
  * @package WordPress
  * @subpackage WPJetFuel
@@ -34,6 +35,9 @@ class CustomizeAdminFavicon extends Instance {
     // add favicon to admin pages
     if (is_admin()) {
       add_filter ('site_icon_meta_tags', [$this, 'useAdminFavicon']);
+    }
+    if (is_admin() && current_user_can('manage_options')) {
+      add_filter('upload_mimes', [$this, 'allowIcoUpload']);
     }
   }
 
@@ -68,5 +72,10 @@ class CustomizeAdminFavicon extends Instance {
     $favicon_url = get_option( 'admin_favicon', '' );
     $meta_tags = array('<link rel="shortcut icon" href="' . esc_url($favicon_url) . '" />');
     return $meta_tags;
+  }
+
+  public function allowIcoUpload($mime_types){
+    $mime_types['ico'] = 'image/x-icon';
+    return $mime_types;
   }
 }
