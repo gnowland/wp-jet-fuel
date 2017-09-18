@@ -56,7 +56,7 @@ class CustomizeAdminFavicon extends Instance {
       'label'       => __( 'Admin Favicon', 'jetfuel' ),
       'description' => sprintf(
         /* translators: %s: site icon size in pixels */
-        __( 'The Admin Favicon is used as a browser icon for the admin panel. Icons <strong>MUST BE .ico</strong> format, square, and pre-cropped to %s pixels wide and tall, and a different color from your public Site Icon (grayscale suggested)', 'jetfuel' ),
+        __( 'The Admin Favicon is used as a browser icon for the admin panel. Icons <strong>MUST BE .ico</strong> format, square, pre-cropped to %s pixels wide and tall, and of a different style than your public Site Icon (may I suggest <em>grayscale</em> or <em>inverted</em>?)', 'jetfuel' ),
         '<strong>48</strong>'
       ),
       'section'     => 'title_tagline',
