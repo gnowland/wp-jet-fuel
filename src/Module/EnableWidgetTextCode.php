@@ -36,7 +36,7 @@ class EnableWidgetTextCode extends Instance {
       foreach ($this->options as $option => $value) {
         // Execute shortcodes in text widget
         if ($value === 'do_shortcode') {
-          add_filter('widget_text', 'do_shortcode');
+          add_filter('widget_text', 'do_shortcode', 11);
         } else {
           add_filter('widget_text', [$this, $value]);
         }
@@ -44,7 +44,7 @@ class EnableWidgetTextCode extends Instance {
     } else {
       foreach ($this->options as $option => $value) {
         if ($value === 'do_shortcode') {
-          add_filter('widget_text', 'do_shortcode');
+          add_filter('widget_text', 'do_shortcode', 11);
         } else {
           add_filter('widget_text', [$this, $value]);
         }
