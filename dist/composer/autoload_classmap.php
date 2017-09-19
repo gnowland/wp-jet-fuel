@@ -94,9 +94,11 @@ return array(
     'Gnowland\\JetFuel\\Instance' => $baseDir . '/src/Instance.php',
     'Gnowland\\JetFuel\\Module\\AddShortcodes' => $baseDir . '/src/Module/AddShortcodes.php',
     'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => $baseDir . '/src/Module/CustomizeAdminFavicon.php',
+    'Gnowland\\JetFuel\\Module\\CustomizeEditor' => $baseDir . '/src/Module/CustomizeEditor.php',
     'Gnowland\\JetFuel\\Module\\CustomizeLogin' => $baseDir . '/src/Module/CustomizeLogin.php',
+    'Gnowland\\JetFuel\\Module\\EnableWidgetTextCode' => $baseDir . '/src/Module/EnableWidgetTextCode.php',
     'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => $baseDir . '/src/Module/RemoveArchivePrefixes.php',
+    'Gnowland\\JetFuel\\Module\\ReorderMenu' => $baseDir . '/src/Module/ReorderMenu.php',
     'Gnowland\\JetFuel\\Module\\ReorderTerms' => $baseDir . '/src/Module/ReorderTerms.php',
-    'Gnowland\\JetFuel\\Module\\UnlockWidgetText' => $baseDir . '/src/Module/EnableWidgetTextCode.php',
     'Gnowland\\JetFuel\\Utils' => $baseDir . '/src/Utils.php',
 );

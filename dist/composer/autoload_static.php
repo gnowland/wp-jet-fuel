@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit89badb66a6055f044d133069103048ad
+class ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0
 {
     public static $files = array (
         '05dd28aca5136e4de2cf8463b8491974' => __DIR__ . '/../..' . '/wp-jet-fuel.php',
@@ -126,19 +126,21 @@ class ComposerStaticInit89badb66a6055f044d133069103048ad
         'Gnowland\\JetFuel\\Instance' => __DIR__ . '/../..' . '/src/Instance.php',
         'Gnowland\\JetFuel\\Module\\AddShortcodes' => __DIR__ . '/../..' . '/src/Module/AddShortcodes.php',
         'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => __DIR__ . '/../..' . '/src/Module/CustomizeAdminFavicon.php',
+        'Gnowland\\JetFuel\\Module\\CustomizeEditor' => __DIR__ . '/../..' . '/src/Module/CustomizeEditor.php',
         'Gnowland\\JetFuel\\Module\\CustomizeLogin' => __DIR__ . '/../..' . '/src/Module/CustomizeLogin.php',
+        'Gnowland\\JetFuel\\Module\\EnableWidgetTextCode' => __DIR__ . '/../..' . '/src/Module/EnableWidgetTextCode.php',
         'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => __DIR__ . '/../..' . '/src/Module/RemoveArchivePrefixes.php',
+        'Gnowland\\JetFuel\\Module\\ReorderMenu' => __DIR__ . '/../..' . '/src/Module/ReorderMenu.php',
         'Gnowland\\JetFuel\\Module\\ReorderTerms' => __DIR__ . '/../..' . '/src/Module/ReorderTerms.php',
-        'Gnowland\\JetFuel\\Module\\UnlockWidgetText' => __DIR__ . '/../..' . '/src/Module/EnableWidgetTextCode.php',
         'Gnowland\\JetFuel\\Utils' => __DIR__ . '/../..' . '/src/Utils.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit89badb66a6055f044d133069103048ad::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit89badb66a6055f044d133069103048ad::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit89badb66a6055f044d133069103048ad::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$classMap;
 
         }, null, ClassLoader::class);
     }
