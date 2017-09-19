@@ -5,11 +5,11 @@ namespace Gnowland\JetFuel\Module;
 use Gnowland\JetFuel\Instance;
 
 /**
- * Module: unlock-widget-text
+ * Module: enable-widget-text-code
  *
  * Prevent WordPress from re-ordering terms checklist
  *
- * @example jetfuel('unlock-widget-text', $config(array|string));
+ * @example jetfuel('enable-widget-text-code', $config(array|string));
  * @param   array|string $config  'all'
  *
  * @link https://developer.wordpress.org/reference/hooks/widget_text/
@@ -18,7 +18,7 @@ use Gnowland\JetFuel\Instance;
  * @subpackage WPJetFuel
  * @since 0.2.0
  */
-class UnlockWidgetText extends Instance {
+class EnableWidgetTextCode extends Instance {
   protected $options;
 
   public function run() {
@@ -26,7 +26,7 @@ class UnlockWidgetText extends Instance {
   }
 
   protected function setup() {
-    $this->options = ['php' => 'widgetTextSupportPhp', 'shortcodes' => 'doShortcode'];
+    $this->options = ['php' => 'widgetTextSupportPhp', 'shortcodes' => 'do_shortcode'];
     $this->setDefaultConfig('all');
     return $this;
   }
@@ -34,11 +34,20 @@ class UnlockWidgetText extends Instance {
   protected function hook() {
     if (in_array('all', $this->config)) {
       foreach ($this->options as $option => $value) {
-        add_filter('widget_text', [$this, $value]);
+        // Execute shortcodes in text widget
+        if ($value === 'do_shortcode') {
+          add_filter('widget_text', 'do_shortcode');
+        } else {
+          add_filter('widget_text', [$this, $value]);
+        }
       }
     } else {
       foreach ($this->options as $option => $value) {
-        add_filter('widget_text', [$this, $value]);
+        if ($value === 'do_shortcode') {
+          add_filter('widget_text', 'do_shortcode');
+        } else {
+          add_filter('widget_text', [$this, $value]);
+        }
       }
     }
   }
@@ -52,10 +61,5 @@ class UnlockWidgetText extends Instance {
       ob_end_clean();
     }
     return $text;
-  }
-
-  // Execute shortcodes in "Text" Widget
-  public function doShortcode() {
-    add_filter('widget_text', 'do_shortcode');
   }
 }
