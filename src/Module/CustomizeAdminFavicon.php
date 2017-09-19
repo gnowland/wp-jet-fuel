@@ -25,7 +25,7 @@ class CustomizeAdminFavicon extends Instance {
   }
 
   protected function setup() {
-      $this->setDefaultConfig('');
+      $this->setDefaultConfig([]);
       return $this;
   }
 

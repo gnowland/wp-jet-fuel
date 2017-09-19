@@ -26,7 +26,7 @@ class CustomizeLogin extends Instance {
   }
 
   protected function setup() {
-      $this->setDefaultConfig('');
+      $this->setDefaultConfig([]);
       return $this;
   }
 
