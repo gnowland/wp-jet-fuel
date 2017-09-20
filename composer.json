@@ -24,6 +24,10 @@
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*"
   },
+  "suggest": {
+    "soberwp/models": "Create custom post types and taxonomies using JSON, YAML or PHP",
+    "soberwp/intervention": "Modules to cleanup and customize wp-admin"
+  },
   "autoload": {
     "psr-4": {
       "Gnowland\\JetFuel\\": "src/",
