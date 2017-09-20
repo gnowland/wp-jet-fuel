@@ -96,7 +96,8 @@ class CustomizeExcerpts extends Instance {
         if (in_array('danger', $this->config)) {
             $allowed_tags = array_merge($allowed_tags, ['script', 'style']);
         }
-        $allowed_tags = implode(',', $allowed_tags);
+        $allowed_tags = implode('>,<', $allowed_tags);
+        $allowed_tags = '<' . $allowed_tags . '>'; 
         $excerpt = strip_tags($excerpt, $allowed_tags);
 
         // Remove empty <a> tags from previously stripped images
@@ -149,8 +150,8 @@ class CustomizeExcerpts extends Instance {
         $excerpt = preg_replace("/\s+\n\n+/", ". ", $excerpt);
         $excerpt = str_replace(".. ", ". ", $excerpt);
 
-        // Remove whitespace from end
-        $excerpt = rtrim($excerpt);
+        // Remove whitespace from end and wrap in p tags
+        $excerpt = '<p>' . rtrim($excerpt) . '</p>';
 
         $excerpt_end = '<a href="' . esc_url( get_permalink() ) . '" class="read-more">' . __('Read More', 'jetfuel') . '</a>';
         $excerpt_end = apply_filters('excerpt_more', '&hellip; ' . $excerpt_end);
@@ -163,9 +164,6 @@ class CustomizeExcerpts extends Instance {
             // Add "Read More" inside last HTML tag
             $excerpt = substr_replace($excerpt, $excerpt_end, $pos, 0);
         }
-
-        // format
-        $excerpt = '<p>' . $excerpt . '</p>';
 
         return apply_filters('custom_excerpt', $excerpt);
     }
