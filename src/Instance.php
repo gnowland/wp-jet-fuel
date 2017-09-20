@@ -11,9 +11,10 @@ class Instance
     /**
      * @param string|array $config
      */
-    public function __construct($config)
+    public function __construct($config, $option)
     {
         $this->config = $this->toArray($config);
+        $this->option = $this->toArray($option);
     }
 
     /**
@@ -21,10 +22,10 @@ class Instance
      *
      * @param string|array $args
      */
-    protected function setDefaultConfig($args)
+    protected function setDefaultConfig($args, $var = 'config')
     {
-        if (!current($this->config)) {
-            $this->config = $this->toArray($args);
+        if (!current($this->$var)) {
+            $this->$var = $this->toArray($args);
         }
     }
 

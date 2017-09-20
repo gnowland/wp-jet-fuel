@@ -39,10 +39,11 @@ if (!defined('ABSPATH')) {
  *
  * @param string $module
  * @param string|array $config
+ * @param string|array $option
  */
-function jetfuel($module = false, $config = false) {
+function jetfuel($module = false, $config = false, $option = false) {
     $class = __NAMESPACE__ . '\Module\\' . str_replace('-', '', ucwords($module, '-'));
     if (class_exists($class)) {
-        $instance = (new $class($config))->run();
+        $instance = (new $class($config, $option))->run();
     }
 }
