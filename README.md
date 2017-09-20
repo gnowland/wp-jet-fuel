@@ -55,12 +55,6 @@ There's no draconian PR standard, if I can't figure out something in your PR we 
 
     $ phing
 
-#### About PHP Namespacing: ####
-
-New to Namespacing? No worries! Just Use `__NAMESPACE__ . '\\` to refer to function names in hooks and such, i.e.:
-
-    add_action('hook_action_name', __NAMESPACE__ . '\\function_name');
-
 ## Attribution ##
 
 Don't be a stranger!
