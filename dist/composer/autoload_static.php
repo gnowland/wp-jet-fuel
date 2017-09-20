@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0
+class ComposerStaticInit7a3d4d73fe452b926566b9345958093f
 {
     public static $files = array (
         '05dd28aca5136e4de2cf8463b8491974' => __DIR__ . '/../..' . '/wp-jet-fuel.php',
@@ -140,9 +140,9 @@ class ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit86f24b5198c82f293654210a2e7a2ce0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7a3d4d73fe452b926566b9345958093f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7a3d4d73fe452b926566b9345958093f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7a3d4d73fe452b926566b9345958093f::$classMap;
 
         }, null, ClassLoader::class);
     }
