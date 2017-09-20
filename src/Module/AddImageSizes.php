@@ -65,11 +65,11 @@ class AddImageSizes extends Instance {
     </style><?php
     }
 
-    public function sortByWidth($a, $b) {
+    private function sortByWidth($a, $b) {
         return $a['width'] - $b['width'];
     }
 
-    public function getImageSizes() {
+    private function getImageSizes() {
         global $_wp_additional_image_sizes;
         $sizes = array();
         $image_sizes = get_intermediate_image_sizes();
@@ -94,23 +94,19 @@ class AddImageSizes extends Instance {
                 }
             }
         }
-
         uasort($sizes, [$this, 'sortByWidth']);
-
         return $sizes;
     }
 
-    function renderImageSizes() {
-        $image_sizes = [$this, 'getImageSizes'];
+    public function renderImageSizes() {
+        $image_sizes = $this->getImageSizes();
 
         $output = '<table class="registered-image-sizes"><thead><tr><td>' . __('Name', 'jetfuel') . '</td><td>' . __('Width', 'jetfuel') . '</td><td>' . __('Height', 'jetfuel') . '</td><td>' . __('Crop', 'jetfuel') . '</td></tr></thead><tbody>';
         foreach ( $image_sizes as $size => $meta ) {
             $output .= '<tr><td>' . esc_attr($size) . '</td><td>' . (int) $meta['width'] . '</td><td>' . (int) $meta['height'] . '</td><td>';
-
             if( (bool) $meta['crop'] === true ) {
                 $output .= '&#x2713;';
             }
-
             $output .= '</td></tr></li>';
         }
         $output .= '</tbody></table>';
@@ -118,7 +114,7 @@ class AddImageSizes extends Instance {
         echo $output;
     }
 
-    function listImageSizes() {
+    public function listImageSizes() {
         add_settings_field(
             'image-sizes',
             __('Registered Sizes', 'jetfuel'),
