@@ -33,7 +33,7 @@ class ReorderFeaturedImage extends Instance {
         add_action('add_meta_boxes', [$this, 'moveFeaturedImageMetabox'], 10, 2);
     }
 
-    function moveFeaturedImageMetabox( $post_type, $post ){
+    public function moveFeaturedImageMetabox( $post_type, $post ){
         $post_type_object = get_post_type_object($post_type);
         if (post_type_supports($post_type_object->name, 'thumbnail')) {
             remove_meta_box('postimagediv', null, 'side');
