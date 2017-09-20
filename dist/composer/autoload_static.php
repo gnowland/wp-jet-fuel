@@ -125,6 +125,7 @@ class ComposerStaticInit7a3d4d73fe452b926566b9345958093f
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
         'Gnowland\\JetFuel\\Instance' => __DIR__ . '/../..' . '/src/Instance.php',
         'Gnowland\\JetFuel\\Module\\Add404' => __DIR__ . '/../..' . '/src/Module/Add404.php',
+        'Gnowland\\JetFuel\\Module\\AddImageSizes' => __DIR__ . '/../..' . '/src/Module/AddImageSizes.php',
         'Gnowland\\JetFuel\\Module\\AddShortcodes' => __DIR__ . '/../..' . '/src/Module/AddShortcodes.php',
         'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => __DIR__ . '/../..' . '/src/Module/CustomizeAdminFavicon.php',
         'Gnowland\\JetFuel\\Module\\CustomizeEditor' => __DIR__ . '/../..' . '/src/Module/CustomizeEditor.php',
