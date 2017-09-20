@@ -40,11 +40,11 @@ class CustomizeExcerpts extends Instance {
         remove_filter('the_excerpt', 'wpautop');
         // Amend get_the_excerpt();
         remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+        remove_filter('excerpt_more', 'wp_embed_excerpt_more', 20);
         add_filter('get_the_excerpt', [$this, 'customizeExcerpt'], 10, 2);
     }
 
     public function customizeExcerpt($excerpt, $post) {
-        xdebug_break();
         // Check if a user-supplied excerpt exists,
         // skip excerpt generation if a user-supplied excerpt exists
         if ( '' === $excerpt ) {
@@ -167,10 +167,7 @@ class CustomizeExcerpts extends Instance {
         // format
         $excerpt = '<p>' . $excerpt . '</p>';
 
-        xdebug_break();
-
-        //return apply_filters('custom_excerpt', $excerpt, $raw_excerpt);
-        return $excerpt;
+        return apply_filters('custom_excerpt', $excerpt);
     }
 
 }
