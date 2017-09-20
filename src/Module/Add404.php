@@ -11,7 +11,11 @@ use Gnowland\JetFuel\Instance;
  *
  * @example jetfuel('add-404');
  *
- * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
+ * @link https://developer.wordpress.org/reference/hooks/admin_init
+ * @link https://codex.wordpress.org/Function_Reference/register_setting
+ * @link https://codex.wordpress.org/Function_Reference/add_settings_field
+ * @link https://developer.wordpress.org/reference/hooks/wp_dropdown_pages/
+ * @link https://developer.wordpress.org/reference/hooks/display_post_states/
  *
  * @package WordPress
  * @subpackage WPJetFuel
