@@ -11,9 +11,9 @@ use Gnowland\JetFuel\Instance;
  *
  * @example jetfuel('reorder-menu');
  *
+ * @link https://developer.wordpress.org/reference/hooks/admin_menu/
  * @link https://developer.wordpress.org/reference/hooks/custom_menu_order/
- * @link https://developer.wordpress.org/reference/functions/menu_order/
- * @link https://developer.wordpress.org/reference/functions/admin_menu/
+ * @link https://developer.wordpress.org/reference/hooks/menu_order/
  *
  * @package WordPress
  * @subpackage WPJetFuel

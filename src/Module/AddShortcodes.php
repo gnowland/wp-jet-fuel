@@ -11,7 +11,10 @@ use Gnowland\JetFuel\Instance;
  *
  * @example jetfuel('add-shortcodes', $items(string|array));
  *
- * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
+ * @link https://developer.wordpress.org/reference/functions/add_shortcode/
+ * @link https://developer.wordpress.org/reference/functions/get_search_form/
+ * @link https://developer.wordpress.org/reference/functions/get_home_url/
+ * @link https://developer.wordpress.org/reference/functions/get_bloginfo/
  *
  * @package WordPress
  * @subpackage WPJetFuel

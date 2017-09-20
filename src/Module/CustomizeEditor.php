@@ -12,6 +12,7 @@ use Gnowland\JetFuel\Instance;
 * @example jetfuel('customize-editor', $options(string|array));
 *
 * @link https://developer.wordpress.org/reference/hooks/mce_buttons_2/
+* @link https://developer.wordpress.org/reference/hooks/mce_buttons/
 * @link https://developer.wordpress.org/reference/hooks/tiny_mce_before_init/
 * @link https://developer.wordpress.org/reference/hooks/admin_head/
 *

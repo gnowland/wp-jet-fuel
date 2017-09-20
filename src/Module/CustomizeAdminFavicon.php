@@ -14,6 +14,11 @@ use Gnowland\JetFuel\Instance;
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
  * @link https://developer.wordpress.org/reference/hooks/site_icon_meta_tags/
  * @link https://developer.wordpress.org/reference/hooks/upload_mimes/
+ * @link https://developer.wordpress.org/reference/functions/current_user_can/
+ * @link https://developer.wordpress.org/reference/functions/is_admin/
+ * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+ * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+ * @link https://developer.wordpress.org/reference/functions/get_option/
  *
  * @package WordPress
  * @subpackage WPJetFuel

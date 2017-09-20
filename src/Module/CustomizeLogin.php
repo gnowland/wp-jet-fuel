@@ -15,6 +15,11 @@ use Gnowland\JetFuel\Instance;
  * @link https://developer.wordpress.org/reference/hooks/login_head/
  * @link https://developer.wordpress.org/reference/hooks/login_headertitle/
  * @link https://developer.wordpress.org/reference/hooks/login_headerurl/
+ * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+ * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+ * @link https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control
+ * @link https://developer.wordpress.org/reference/functions/get_option/
+ * @link https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/
  *
  * @package WordPress
  * @subpackage WPJetFuel
