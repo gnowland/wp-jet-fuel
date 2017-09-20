@@ -40,7 +40,7 @@ class ForceExcerptField extends Instance {
         }
     }
 
-    function forceExcerptField( $hidden, $screen ) {
+    public function forceExcerptField( $hidden, $screen ) {
         if (in_array('all', $this->config)) {
             if (in_array($screen->id, $this->options)) {
                 if(($key = array_search('postexcerpt', $hidden)) !== false) {
@@ -55,7 +55,7 @@ class ForceExcerptField extends Instance {
         return $hidden;
     }
 
-    function enableExcerptForPages() {
+    public function enableExcerptForPages() {
         add_post_type_support( 'page', 'excerpt' );
     }
 }
