@@ -9,7 +9,8 @@ use Gnowland\JetFuel\Instance;
 *
 * Customizations for the TinyMCE visual editor
 *
-* @example jetfuel('customize-editor', $options(string|array));
+* @example jetfuel('customize-editor', $option(string));
+* @param string $option remove the H1 format (true/false)
 *
 * @link https://developer.wordpress.org/reference/hooks/mce_buttons_2/
 * @link https://developer.wordpress.org/reference/hooks/mce_buttons/
@@ -21,15 +22,13 @@ use Gnowland\JetFuel\Instance;
 * @since 0.2.0
 */
 class CustomizeEditor extends Instance {
-    protected $options;
 
     public function run() {
         $this->setup()->hook();
     }
 
     protected function setup() {
-        $this->options = [];
-        $this->setDefaultConfig('all');
+        $this->setDefaultConfig('true');
         return $this;
     }
 
@@ -38,8 +37,10 @@ class CustomizeEditor extends Instance {
         add_filter('mce_buttons_2', [$this, 'moveHelp']);
         // Show style formats dropdown
         add_filter('mce_buttons', [$this, 'showStyleFormats']);
-        // Remove H1
-        add_filter('tiny_mce_before_init', [$this, 'removeH1']);
+        if (in_array('true', $this->config)) {
+          // Remove H1
+          add_filter('tiny_mce_before_init', [$this, 'removeH1']);
+        }
         // Add formats to the style select
         add_filter('tiny_mce_before_init', [$this, 'customizeStyleFormats']);
         // Inject <style> into TinyMCE <iframe> <head> to fix infinite-height bug
@@ -74,9 +75,7 @@ class CustomizeEditor extends Instance {
             array(
                 'title' => __('Headings', 'jetfuel'),
                 'items' => array(
-                    // Default
-                    // [ 'title'  => __('Heading 1', 'jetfuel'),
-                    //   'format' => 'h1' ],
+                    // Defaults
                     [ 'title'  => __('Heading 2', 'jetfuel'),
                       'format' => 'h2' ],
                     [ 'title'  => __('Heading 3', 'jetfuel'),
@@ -165,6 +164,14 @@ class CustomizeEditor extends Instance {
                 )
             )
         );
+
+        // Show H1 in the Headings array
+        if (!in_array('true', $this->config)) {
+          array_unshift($style_formats[0]['items'],
+            [ 'title'  => __('Heading 1', 'jetfuel'),
+              'format' => 'h1' ]
+          );
+        }
 
         // Insert the array, JSON ENCODED, into 'style_formats'
         $settings['style_formats_merge'] = false; // Merge with existing style formats
