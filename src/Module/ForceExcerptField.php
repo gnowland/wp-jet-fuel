@@ -12,6 +12,7 @@ use Gnowland\JetFuel\Instance;
  * @example jetfuel('force-excerpt-field', $post_type(string|array));
  *
  * @link https://developer.wordpress.org/reference/hooks/hidden_meta_boxes
+ * @link https://developer.wordpress.org/reference/hooks/init
  *
  * @package WordPress
  * @subpackage WPJetFuel
@@ -35,9 +36,7 @@ class ForceExcerptField extends Instance {
         add_action('hidden_meta_boxes', [$this, 'forceExcerptField'], 10, 2);
         // Force enable excerpt for Page post type
         if (in_array('all', $this->config) || in_array('page', $this->config)) {
-            if (is_admin() && current_user_can('edit_posts')) {
-                add_action('init', [$this, 'enableExcerptForPages']);
-            }
+            add_action('init', [$this, 'enableExcerptForPages']);
         }
     }
 
