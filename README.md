@@ -1,6 +1,7 @@
 # WordPress Jet Fuel &beta; #
 [![Packagist](https://img.shields.io/packagist/v/gnowland/wp-jet-fuel.svg?style=flat-square)](https://packagist.org/packages/gnowland/wp-jet-fuel)
 [![GitHub release](https://img.shields.io/github/release/gnowland/wp-jet-fuel.svg?style=flat-square)](https://github.com/gnowland/wp-jet-fuel/releases)
+[![npm](https://img.shields.io/npm/v/wp-jet-fuel.svg?style=flat-square)](https://www.npmjs.com/package/wp-jet-fuel)
 
 Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of *too many* years making one-off WordPress customizations and filtering hooks... I truly hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
 
