@@ -13,7 +13,7 @@ The following plugins are particularly complementary; in fact a notable number o
 ## How To Use ##
 
 * Install Plugin (see below)
-* Add `jetfuel('module-name', ['arbitrary', 'options'])` to functions.php (or ideally a file required by functions.php)
+* Add `jetfuel('module-name', ['arbitrary', 'options']);` to functions.php (or ideally a file required by functions.php)
     * (More in-depth descriptions of modules to come)
 
 ## Installation ##
