@@ -2,56 +2,48 @@
 
 /**
  *
- * @link    https://github.com/gnowland/wp-jet-fuel
- * @since   0.1.0
- * @package WPJetFuel
- *
  * @wordpress-plugin
- * Plugin Name:  WordPress Jet Fuel
- * Plugin URI:   https://github.com/gnowland/wp-jet-fuel
- * Description:  Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
- * Version:      0.1.0
- * Author:       Gifford Nowland
- * Author URI:   http://giffordnowland.com/
- * License:      MIT
+ * Plugin Name:         WordPress Jet Fuel
+ * Plugin URI:          https://github.com/gnowland/wp-jet-fuel
+ * Description:         Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
+ * Version:             0.2.0
+ * Author:              Gifford Nowland
+ * Author URI:          http://giffordnowland.com/
  *
- * Text Domain:  wp-jet-fuel
- * Domain Path:  /languages
+ * License:             MIT License
+ * License URI:         http://opensource.org/licenses/MIT
  *
-*/
-
-namespace WPJetFuel;
-
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) die('Abort!');
-
-/*
- * Automatically include all PHP files from a plugin subfolder while avoiding adding an unnecessary global
- * just to determine a path that is already available everywhere via WP core functions:
+ * GitHub Plugin URI:   gnowland/wp-jet-fuel
+ * GitHub Branch:       0.2.0
  *
- * Delay to 11 to ensure all other plugins, plugin classes are loaded first
+ * Text Domain:         jetfuel
+ * Domain Path:         /languages
+ *
+ * Attribution:
+ * I owe a ton of inspiration for version 0.2.0 of the plugin to https://github.com/soberwp/intervention
+ *
  */
-function plugin_init() {
-	$plugin_base_dir = plugin_dir_path( __FILE__ );
-	foreach ( glob( $plugin_base_dir . "inc/*.php" ) as $file ) {
-	  include_once $file;
-	}
+namespace Gnowland\JetFuel;
 
-	// Admin
-	if( is_admin() ) {
-		foreach ( glob( $plugin_base_dir . "inc/admin/*.php" ) as $file ) {
-			include_once $file;
-		}
-	}
+/**
+ * Plugin
+ */
+if (!defined('ABSPATH')) {
+    die;
+};
 
-	// Customizer
-	foreach ( glob( $plugin_base_dir . "inc/customizer/*.php" ) as $file ) {
-		include_once $file;
-	}
+//require(file_exists($composer = __DIR__ . '/vendor/autoload.php') ? $composer : __DIR__ . '/dist/autoload.php');
 
-	// Widgets
-	foreach ( glob( $plugin_base_dir . "inc/widgets/*.php" ) as $file ) {
-		include_once $file;
-	}
+/**
+ * Setup $loader object from function jetfuel
+ *
+ * @param string $module
+ * @param string|array $config
+ * @param string|array $option
+ */
+function jetfuel($module = false, $config = false, $option = false) {
+    $class = __NAMESPACE__ . '\Module\\' . str_replace('-', '', ucwords($module, '-'));
+    if (class_exists($class)) {
+        $instance = (new $class($config, $option))->run();
+    }
 }
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\plugin_init', 11);

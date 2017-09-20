@@ -1,6 +1,6 @@
 {
   "name": "wp-jet-fuel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons, etc.",
   "main": "wp-jet-fuel.php",
   "scripts": {
