@@ -93,6 +93,7 @@ return array(
     'Composer\\Installers\\ZikulaInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
     'Gnowland\\JetFuel\\Instance' => $baseDir . '/src/Instance.php',
     'Gnowland\\JetFuel\\Module\\Add404' => $baseDir . '/src/Module/Add404.php',
+    'Gnowland\\JetFuel\\Module\\AddAdminCss' => $baseDir . '/src/Module/AddAdminCss.php',
     'Gnowland\\JetFuel\\Module\\AddImageSizes' => $baseDir . '/src/Module/AddImageSizes.php',
     'Gnowland\\JetFuel\\Module\\AddShortcodes' => $baseDir . '/src/Module/AddShortcodes.php',
     'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => $baseDir . '/src/Module/CustomizeAdminFavicon.php',
