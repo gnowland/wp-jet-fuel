@@ -37,10 +37,12 @@ class AddImageSizes extends Instance {
         // Register custom image sizes
         add_action('after_setup_theme', [$this, 'addImageSizes']);
         // Register image sizes for use in Add Media modal
-        add_filter('image_size_names_choose', [$this, 'addToMediaModal']);
-        // Display all registered image sizes in Settings > Media
-        add_action('admin_head-options-media.php', [$this, 'renderImageSizeCSS']);
-        add_action('admin_init', [$this, 'listImageSizes']);
+        if(is_admin()){
+            add_filter('image_size_names_choose', [$this, 'addToMediaModal']);
+            // Display all registered image sizes in Settings > Media
+            add_action('admin_head-options-media.php', [$this, 'renderImageSizeCSS']);
+            add_action('admin_init', [$this, 'listImageSizes']);
+        }
     }
 
     public function removeImgParagraph($content){
