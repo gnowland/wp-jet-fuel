@@ -14,6 +14,7 @@ use Gnowland\JetFuel\Instance;
  * @link https://developer.wordpress.org/reference/hooks/the_content/
  * @link https://developer.wordpress.org/reference/hooks/after_setup_theme/
  * @link https://developer.wordpress.org/reference/functions/add_image_size/
+ * @link https://developer.wordpress.org/reference/functions/image_size_names_choose/
  *
  * @package WordPress
  * @subpackage WPJetFuel
@@ -35,6 +36,8 @@ class AddImageSizes extends Instance {
         add_filter('the_content', [$this, 'removeImgParagraph']);
         // Register custom image sizes
         add_action('after_setup_theme', [$this, 'addImageSizes']);
+        // Register image sizes for use in Add Media modal
+        add_filter('image_size_names_choose', [$this, 'addToMediaModal']);
         // Display all registered image sizes in Settings > Media
         add_action('admin_head-options-media.php', [$this, 'renderImageSizeCSS']);
         add_action('admin_init', [$this, 'listImageSizes']);
@@ -49,11 +52,22 @@ class AddImageSizes extends Instance {
         //              'medium'               512, 9999            Set in admin
         //              'medium_large_size_w', 768                  Not Editable
         //              'large'                1024  9999           Set in admin
-        add_image_size( 'xlarge',              1440, 9999, false );
-        add_image_size( 'xxlarge',             1680, 9999, false );
-        add_image_size( 'giant',               1920, 9999, false );
-        add_image_size( 'jumbo',               2560, 9999, false );
+        add_image_size('xlarge',              1440, 9999, false);
+        add_image_size('xxlarge',             1680, 9999, false);
+        add_image_size('giant',               1920, 9999, false);
+        add_image_size('jumbo',               2560, 9999, false);
         //              'original'             3000+
+    }
+
+    public function addToMediaModal($sizes) {
+        $sizes = array_slice( $sizes, 0, -1, true) + array(
+            'xlarge'  => __('XL', 'jetfuel'),
+            'xxlarge' => __('XXL', 'jetfuel'),
+            'giant'   => __('Giant', 'jetfuel'),
+            'jumbo'   => __('Jumbo', 'jetfuel')
+         ) + array_slice( $sizes, -1, null, true);
+        xdebug_break();
+        return $sizes;
     }
 
     public function renderImageSizeCSS() {
