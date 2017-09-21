@@ -1,4 +1,4 @@
-# WordPress Jet Fuel &beta; #
+# WordPress Jet Fuel #
 [![GitHub release](https://img.shields.io/github/release/gnowland/wp-jet-fuel.svg?style=flat-square)](https://github.com/gnowland/wp-jet-fuel/releases)
 [![Packagist](https://img.shields.io/packagist/v/gnowland/wp-jet-fuel.svg?style=flat-square)](https://packagist.org/packages/gnowland/wp-jet-fuel)
 [![npm](https://img.shields.io/npm/v/wp-jet-fuel.svg?style=flat-square)](https://www.npmjs.com/package/wp-jet-fuel)
@@ -42,6 +42,10 @@ Activate with [wp-cli](http://wp-cli.org/)
 ## Updates ##
 
 Includes support for [github-updater](https://github.com/afragen/github-updater) to keep track of updates through the WordPress admin.
+
+## Changelog ##
+
+See [Releases](https://github.com/gnowland/wp-jet-fuel/releases).
 
 ## Contribution ##
 
