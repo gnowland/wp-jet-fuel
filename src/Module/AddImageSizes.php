@@ -68,7 +68,6 @@ class AddImageSizes extends Instance {
             'giant'   => __('Giant', 'jetfuel'),
             'jumbo'   => __('Jumbo', 'jetfuel')
          ) + array_slice( $sizes, -1, null, true);
-        xdebug_break();
         return $sizes;
     }
 
