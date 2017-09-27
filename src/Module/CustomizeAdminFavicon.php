@@ -53,7 +53,8 @@ class CustomizeAdminFavicon extends Instance {
       'capability' => 'manage_options',
       'type'       => 'option',
       'default'    => get_option( 'jetfuel_admin_favicon', '' ),
-      'transport'  => 'postMessage', // Previewed with JS in the Customizer controls window.
+      'transport'  => 'postMessage',
+      'sanitize_callback' => 'esc_url_raw'
      ) );
 
     // Add image uploader
