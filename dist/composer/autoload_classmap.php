@@ -103,6 +103,7 @@ return array(
     'Gnowland\\JetFuel\\Module\\EnableWidgetTextCode' => $baseDir . '/src/Module/EnableWidgetTextCode.php',
     'Gnowland\\JetFuel\\Module\\ForceExcerptField' => $baseDir . '/src/Module/ForceExcerptField.php',
     'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => $baseDir . '/src/Module/RemoveArchivePrefixes.php',
+    'Gnowland\\JetFuel\\Module\\RemoveCommentFields' => $baseDir . '/src/Module/RemoveCommentFields.php',
     'Gnowland\\JetFuel\\Module\\ReorderFeaturedImage' => $baseDir . '/src/Module/ReorderFeaturedImage.php',
     'Gnowland\\JetFuel\\Module\\ReorderMenu' => $baseDir . '/src/Module/ReorderMenu.php',
     'Gnowland\\JetFuel\\Module\\ReorderTerms' => $baseDir . '/src/Module/ReorderTerms.php',
