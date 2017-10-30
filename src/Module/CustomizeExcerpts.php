@@ -45,6 +45,7 @@ class CustomizeExcerpts extends Instance {
     }
 
     public function customizeExcerpt($excerpt, $post) {
+        if (strrpos($excerpt, 'Read More')) return $excerpt;
         // Check if a user-supplied excerpt exists,
         // skip excerpt generation if a user-supplied excerpt exists
         if ( '' === $excerpt ) {
@@ -150,11 +151,16 @@ class CustomizeExcerpts extends Instance {
         $excerpt = preg_replace("/\s+\n\n+/", ". ", $excerpt);
         $excerpt = str_replace(".. ", ". ", $excerpt);
 
+        // Check if last character is punctuation
+        $end_punc = preg_match('/[\p{P}]$/u', $excerpt);
+
         // Remove whitespace from end and wrap in p tags
         $excerpt = '<p>' . rtrim($excerpt) . '</p>';
 
-        $excerpt_end = '<a href="' . esc_url( get_permalink() ) . '" class="read-more">' . __('Read More', 'jetfuel') . '</a>';
-        $excerpt_end = apply_filters('excerpt_more', '&hellip; ' . $excerpt_end);
+        $excerpt_end = ' <a href="' . esc_url( get_permalink() ) . '" class="read-more">' . __('Read More', 'jetfuel') . '</a>';
+        if (!$end_punc) {
+            $excerpt_end = apply_filters('excerpt_more', '&hellip;' . $excerpt_end);
+        }
 
         $pos = strrpos($excerpt, '</');
         if ($pos === false){
