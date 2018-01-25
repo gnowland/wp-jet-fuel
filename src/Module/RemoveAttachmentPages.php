@@ -32,7 +32,9 @@ class RemoveAttachmentPages extends Instance {
 
   public function RemoveAttachmentPages() {
     global $post;
-    $post_parent = $post->post_parent;
+    if ($post) {
+      $post_parent = $post->post_parent;
+    }
     if (is_attachment() && isset($post_parent) && is_numeric($post_parent) && ($post_parent !== 0)) {
       $parent_post_in_trash = get_post_status($post_parent) === 'trash' ? true : false;
       if ($parent_post_in_trash) {
