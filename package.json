@@ -1,5 +1,5 @@
 {
-  "name": "gnowland/wp-jet-fuel",
+  "name": "wp-jet-fuel",
   "version": "1.3.2",
   "description": "Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons, etc.",
   "main": "wp-jet-fuel.php",
