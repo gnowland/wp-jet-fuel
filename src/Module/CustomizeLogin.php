@@ -79,21 +79,27 @@ class CustomizeLogin extends Instance {
   public function loginImage() {
     if( !empty( $logo_id = get_option('jetfuel_login_logo') ) ) {
       $logo_array = wp_get_attachment_image_src($logo_id, [640,9999]);
-      $logo_url = $logo_array[0];
-      $image_ratio = 100 * ( $logo_array[2] / $logo_array[1] );
-      echo '<style>
-        .login h1 a {
-          background-image: url( ' . esc_url($logo_url) . ' ) !important;
-          width: 100%;
-          background-size: cover;
-          height: 0;
-          padding: 0;
-          padding-bottom: ' . floatval($image_ratio) . '%;
+      if( !empty($logo_array) && is_array($logo_array) ) {
+        $logo_url = $logo_array[0];
+        if( !empty($logo_array[2]) && !empty($logo_array[1]) ) {
+          $image_ratio = 100 * ( $logo_array[2] / $logo_array[1] ) . '%';
+        } else {
+          $image_ratio = 'auto';
         }
-        .interim-login h1 a {
-          margin-bottom: 0;
+        echo '<style>
+          .login h1 a {
+            background-image: url( ' . esc_url($logo_url) . ' ) !important;
+            width: 100%;
+            background-size: cover;
+            height: 0;
+            padding: 0;
+            padding-bottom: ' . floatval($image_ratio) . ';
+          }
+          .interim-login h1 a {
+            margin-bottom: 0;
+          }
+        </style>';
         }
-      </style>';
     }
   }
 }
