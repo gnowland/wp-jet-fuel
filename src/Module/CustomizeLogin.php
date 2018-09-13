@@ -93,7 +93,7 @@ class CustomizeLogin extends Instance {
             background-size: cover;
             height: 0;
             padding: 0;
-            padding-bottom: ' . floatval($image_ratio) . ';
+            padding-bottom: ' . floatval($image_ratio) . '%;
           }
           .interim-login h1 a {
             margin-bottom: 0;
