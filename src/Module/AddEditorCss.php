@@ -34,7 +34,7 @@ class AddEditorCss extends Instance {
 
     public function addEditorCss($hook) {
         if ( $hook === ('post.php' || 'toplevel_page_site-options') ) {
-            wp_enqueue_style( 'editor_css', plugin_dir_url( __FILE__ ) . 'css/editor.css', false, null );
+            wp_enqueue_style( 'editor_css', plugin_dir_url( __DIR__ ) . 'css/editor.css', false, null );
         }
     }
 

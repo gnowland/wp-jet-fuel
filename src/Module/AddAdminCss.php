@@ -33,7 +33,7 @@ class AddAdminCss extends Instance {
     }
 
     public function addAdminCss($hook) {
-        wp_enqueue_style( 'admin_css', plugin_dir_url( __FILE__ ) . 'css/admin.css', false, null );
+        wp_enqueue_style( 'admin_css', plugin_dir_url( __DIR__ ) . 'css/admin.css', false, null );
     }
 
 }
