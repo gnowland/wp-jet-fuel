@@ -2,6 +2,14 @@
 .mb0 { margin-bottom: 0; }
 .pre { font-family: monospace; font-style: normal; font-weight: normal; padding-left: 0.5em; }
 
+/**
+ * Allow Admin header menu sites list to overflow
+ */
+ul#wp-admin-bar-my-sites-list {
+  overflow: scroll;
+  max-height: calc(100vh - 108px);
+}
+
 /*
  * Custom Category Metaboxes
  */
