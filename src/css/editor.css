@@ -1,0 +1,155 @@
+/**
+ * Editor styles
+ */
+.inline-block { display: inline-block; }
+.mb0 { margin-bottom: 0; }
+.pre { font-family: monospace; font-style: normal; font-weight: normal; padding-left: 0.5em; }
+
+/*
+ * Custom Category Metaboxes
+ */
+#tagsdiv-region.postbox {
+  display: none;
+}
+
+/*
+ * TinyMCE
+ */
+/* Override "Formats" dropdown menu selection formatting */
+.mce-menu .mce-menu-item-preview .mce-text {
+  font-size: 1rem!important;
+}
+
+/*
+ * Formats selectbox (hook in admin-editor.php)
+ */
+.mce-toolbar.mce-last .mce-btn-group .mce-first.mce-menubtn {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  direction: ltr;
+  background: #fff;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: inset 0 1px 1px -1px rgba(0, 0, 0, .2);
+  box-shadow: inset 0 1px 1px -1px rgba(0, 0, 0, .2);
+}
+
+.mce-toolbar.mce-last .mce-btn-group .mce-first.mce-menubtn:hover {
+border-color: #b4b9be;
+}
+
+.mce-toolbar.mce-last .mce-btn-group .mce-first.mce-menubtn button {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  width: 110px;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 6px;
+  padding-right: 20px;
+}
+
+.mce-toolbar.mce-last .mce-btn-group .mce-first.mce-menubtn button span {
+  display: inline-block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  width: 90px;
+}
+
+.mce-toolbar.mce-last .mce-btn-group .mce-first.mce-menubtn button .mce-caret {
+  right: 4px;
+  position: absolute;
+  margin-top: -2px;
+  top: 50%;
+}
+
+.mce-menu .mce-menu-item-preview .mce-text {
+  font-family: inherit!important;
+  font-size: 14px!important;
+  text-transform: initial!important;
+  font-weight: normal!important;
+  color: inherit!important;
+}
+
+/*
+ * Media
+ */
+.media-frame select.attachment-filters {
+   max-width: 100%;
+}
+
+/*
+ * ACF
+ */
+/* Custom */
+.acf-field-textarea[data-name="case_testimonial_text"] textarea {
+  font-style: italic;
+}
+
+#side-sortables .acf-fields > .acf-field.acf-field-message {
+  padding-bottom: 0;
+}
+#side-sortables .acf-fields > .acf-field.acf-field-message:first-of-type {
+  padding-top: 0;
+}
+.acf-field-message .acf-label {
+  border-bottom: 1px dotted #d0d0d0;
+  padding: 0 4px 2px;
+  margin: 10px -4px 0;
+}
+
+.acf-field-message .acf-label label {
+  font-size: 14px;
+}
+
+/* Generic */
+.small-field,
+.acf-field-number .acf-input { max-width: 10em; }
+
+.small-field-next { width: calc(100% - 10em - 12px); }
+
+.acf-field input,
+.acf-field textarea,
+.acf-field select { line-height: 1 !important; }
+
+.acf-field-true-false .acf-label { display: inline-block; }
+
+#side-sortables .acf-field-true-false .acf-label { margin-bottom: 0; }
+#side-sortables .acf-input .description { margin-bottom: -4px; }
+#side-sortables .acf-fields > .acf-field { border-top: none; padding: 8px 12px; }
+#side-sortables .acf-fields > .acf-field:first-of-type { padding-top: 14px; }
+#side-sortables .acf-fields > .acf-field:last-of-type { padding-bottom: 14px; }
+#side-sortables .acf-fields > .acf-field.acf-field-true-false { border-top: none; }
+
+.acf-field-true-false .acf-input { display: inline-block; padding-left: 5px; }
+.acf-field-true-false .acf-checkbox-list li { line-height: 1; }
+.acf-field-true-false.box-left .acf-input { padding-left: 0; padding-right: 5px; float: left; }
+
+.acf-color_picker .wp-picker-active {
+  z-index: 1;
+  position: relative;
+  background: #FFF;
+  box-shadow: 0 0 4px 2px #EEE;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.acf-taxonomy-field .acf-icon {
+  border-color: #b4b9be;
+  background: #b4b9be;
+  color: #fff;
+  visibility: visible;
+  opacity: 1;
+}
+
+.acf-taxonomy-field .acf-icon:hover {
+  border-color: #b4b9be;
+  background: #FFF;
+  color: #b4b9be;
+}
+
+.acf-soh .select2-container {
+  max-width: calc(100% - 1rem);
+}
+
+.acf-soh.acf-taxonomy-field[data-type="select"] .acf-icon.acf-soh-target {
+  top: 3px;
+}
