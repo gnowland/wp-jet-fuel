@@ -12,7 +12,9 @@
     }
   ],
   "keywords": [
-    "wordpress", "wordpress plugin", "plugin"
+    "wordpress",
+    "wordpress plugin",
+    "plugin"
   ],
   "support": {
     "issues": "https://github.com/gnowland/wp-jet-fuel/issues"
@@ -32,10 +34,7 @@
     "psr-4": {
       "Gnowland\\JetFuel\\": "src/",
       "Gnowland\\JetFuel\\Module\\": "src/modules/"
-    },
-    "files": [
-      "wp-jet-fuel.php"
-    ]
+    }
   },
   "scripts": {
     "test": [

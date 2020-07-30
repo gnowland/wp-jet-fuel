@@ -32,7 +32,7 @@ if (!defined('ABSPATH')) {
     die;
 };
 
-//require(file_exists($composer = __DIR__ . '/vendor/autoload.php') ? $composer : __DIR__ . '/dist/autoload.php');
+require(file_exists($composer = __DIR__ . '/vendor/autoload.php') ? $composer : __DIR__ . '/dist/autoload.php');
 
 /**
  * Setup $loader object from function jetfuel
