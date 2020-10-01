@@ -41,7 +41,7 @@ class CustomizeLogin extends Instance {
     // change login page logo to the one set in the customizer
     add_action( 'login_head', [$this, 'loginImage'] );
     // change the alt text on the logo to show your site name
-    add_filter( 'login_headertitle', function() { return get_option('blogname'); } );
+    add_filter( 'login_headertext', function() { return get_option('blogname'); } );
     // change the logo link from wordpress.org to your site
     add_filter( 'login_headerurl', function() { return home_url(); } );
   }
