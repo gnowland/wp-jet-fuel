@@ -43,7 +43,8 @@ require(file_exists($composer = __DIR__ . '/vendor/autoload.php') ? $composer : 
  */
 function jetfuel($module = false, $config = false, $option = false) {
     $class = __NAMESPACE__ . '\Module\\' . str_replace('-', '', ucwords($module, '-'));
-    if (class_exists($class)) {
-        $instance = (new $class($config, $option))->run();
+    if (!class_exists($class)) {
+      return;
     }
+    $instance = (new $class($config, $option))->run();
 }
