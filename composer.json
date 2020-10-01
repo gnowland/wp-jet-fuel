@@ -38,6 +38,9 @@
   "scripts": {
     "test": [
       "vendor/bin/phpcs --extensions=php --ignore=vendor/ ."
+    ],
+    "build": [
+      "vendor/bin/phing"
     ]
   }
 }
