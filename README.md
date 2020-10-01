@@ -17,7 +17,8 @@ The following plugins are particularly complementary; in fact a notable number o
 
 * Install Plugin (see below)
 * Add `jetfuel('module-name', ['arbitrary', 'options']);` to functions.php (or ideally a file required by functions.php)
-    * (More in-depth descriptions of modules to come)
+    
+@TODO: (Add in-depth descriptions of individual modules)
 
 ## Installation ##
 
