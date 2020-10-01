@@ -23,11 +23,15 @@ The following plugins are particularly complementary; in fact a notable number o
 
 ### Composer ###
 
-    $ composer require gnowland/wp-jet-fuel
+```shell
+composer require gnowland/wp-jet-fuel
+```
 
 Activate with [wp-cli](http://wp-cli.org/)
 
-    $ wp plugin activate wp-jet-fuel
+```shell
+wp plugin activate wp-jet-fuel
+```
 
 ### Git ###
 
@@ -48,7 +52,7 @@ Includes support for [github-updater](https://github.com/afragen/github-updater)
 
 See [Releases](https://github.com/gnowland/wp-jet-fuel/releases).
 
-## Contribution ##
+## Contributing ##
 
 Heck yea! Baby, we're better together.
 
@@ -58,9 +62,26 @@ Heck yea! Baby, we're better together.
 
 There's no draconian PR standard, if I can't figure out something in your PR we can work it out together.
 
-### Build ###
+### Onboarding ###
 
-    $ phing
+git clone git@github.com:gnowland/wp-jet-fuel.git
+composer install
+
+### Test ###
+
+Make sure your code complies with PSR-2/SOBER guidelines
+
+```shell
+composer test src/
+```
+
+### Build for release ###
+
+Create `dist/`:
+
+```shell
+composer build
+```
 
 ## Attribution ##
 
