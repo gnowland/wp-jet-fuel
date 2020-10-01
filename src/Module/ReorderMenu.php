@@ -69,10 +69,31 @@ class ReorderMenu extends Instance {
         add_action('menu_order', [$this, 'reorderMenu']);
     }
 
-    public function addSpacers() {
-        global $menu;
-        $menu[] = array( '', 'read', 'separator-core', '', 'wp-menu-separator' ); // Add separator-core
-        $menu[] = array( '', 'read', 'separator-plugins', '', 'wp-menu-separator' ); // Add separator-plugins
+    /**
+    * Submodule: addSpacers
+    *
+    * Hooks into admin_menu to add additional spacers
+    * as determined by $menu_order(array) values beginning with 'separator-'
+    *
+    * @example jetfuel('reorder-menu', $config(array['spacer-example']));
+    * @param   array|string $config(array['spacer-example'])
+    *
+    * @link https://developer.wordpress.org/reference/hooks/admin_menu/
+    *
+    * @package WordPress
+    * @subpackage WPJetFuel
+    * @since 0.2.0
+    * @version 2.2.0
+    */
+    public function addSpacers($menu_ord) {
+      global $menu;
+      $menu_ord = $this->config;
+
+      foreach ($menu_ord as $menu_item) {
+        if ( strpos($menu_item, 'separator-') === 0) {
+          $menu[] = array( '', 'read', $menu_item, '', 'wp-menu-separator' ); // Add separator-core
+        }
+      }
     }
 
     public function reorderMenu($menu_ord) {
