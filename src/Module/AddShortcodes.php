@@ -10,6 +10,7 @@ use Gnowland\JetFuel\Instance;
  * Adds helpful shortcodes
  *
  * @example jetfuel('add-shortcodes', $items(string|array));
+ * @param   string|array $items a shortcode or array of shortcodes to include, possible shortcodes: 'year', 'search', 'home_url', 'site_name', omit or 'all' to include all
  *
  * @link https://developer.wordpress.org/reference/functions/add_shortcode/
  * @link https://developer.wordpress.org/reference/functions/get_search_form/
