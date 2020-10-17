@@ -23,6 +23,11 @@ class ShowIp extends Instance {
     $this->setup()->hook();
   }
 
+  protected function setup() {
+    $this->setDefaultConfig('false');
+    return $this;
+  }
+
   protected function hook() {
     // Add IP address to the admin toolbar
     add_action('admin_bar_menu', [$this, 'add_toolbar_items'], 100);
