@@ -318,6 +318,7 @@ class ComposerStaticInit33076b39ec84bddbb06d935cdf6f507d
         'Gnowland\\JetFuel\\Module\\ReorderFeaturedImage' => __DIR__ . '/../..' . '/src/Module/ReorderFeaturedImage.php',
         'Gnowland\\JetFuel\\Module\\ReorderMenu' => __DIR__ . '/../..' . '/src/Module/ReorderMenu.php',
         'Gnowland\\JetFuel\\Module\\ReorderTerms' => __DIR__ . '/../..' . '/src/Module/ReorderTerms.php',
+        'Gnowland\\JetFuel\\Module\\ShowIp' => __DIR__ . '/../..' . '/src/Module/ShowIp.php',
         'Gnowland\\JetFuel\\Utils' => __DIR__ . '/../..' . '/src/Utils.php',
         'GrowlNotifyTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/GrowlNotifyTask.php',
         'HasFreeSpaceCondition' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/condition/HasFreeSpaceCondition.php',

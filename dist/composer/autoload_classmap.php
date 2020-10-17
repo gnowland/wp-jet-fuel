@@ -290,6 +290,7 @@ return array(
     'Gnowland\\JetFuel\\Module\\ReorderFeaturedImage' => $baseDir . '/src/Module/ReorderFeaturedImage.php',
     'Gnowland\\JetFuel\\Module\\ReorderMenu' => $baseDir . '/src/Module/ReorderMenu.php',
     'Gnowland\\JetFuel\\Module\\ReorderTerms' => $baseDir . '/src/Module/ReorderTerms.php',
+    'Gnowland\\JetFuel\\Module\\ShowIp' => $baseDir . '/src/Module/ShowIp.php',
     'Gnowland\\JetFuel\\Utils' => $baseDir . '/src/Utils.php',
     'GrowlNotifyTask' => $vendorDir . '/phing/phing/classes/phing/tasks/ext/GrowlNotifyTask.php',
     'HasFreeSpaceCondition' => $vendorDir . '/phing/phing/classes/phing/tasks/system/condition/HasFreeSpaceCondition.php',
