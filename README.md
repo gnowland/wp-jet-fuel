@@ -6,6 +6,8 @@
 |
 [![npm](https://img.shields.io/npm/v/wp-jet-fuel.svg?style=flat-square)](https://www.npmjs.com/package/wp-jet-fuel)
 [![npm Downloads](https://img.shields.io/npm/dt/wp-jet-fuel.svg?style=flat-square)](https://www.npmjs.com/package/wp-jet-fuel)
+|
+[![buymeacoffee.com/gnowland](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-donate-yellow.svg?style=flat-square)](https://www.buymeacoffee.com/gnowland)
 
 
 Propel your WordPress installation into the stratosphere with this multi-function plugin. The combined result of *too many* years making one-off WordPress customizations and filtering hooks... I truly hope it brings inner peace and enlightenment to your world. ~(˘▾˘~)
