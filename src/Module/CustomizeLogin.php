@@ -25,7 +25,7 @@ use Gnowland\JetFuel\Instance;
  * @package WordPress
  * @subpackage WPJetFuel
  * @since 0.2.0
- * @version 2.3.0
+ * @since 2.3.0
  */
 class CustomizeLogin extends Instance {
   public function run() {
