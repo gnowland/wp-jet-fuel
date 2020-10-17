@@ -9,7 +9,7 @@ use Gnowland\JetFuel\Instance;
  *
  * Adds section to Customizer to customize login page
  *
- * @example jetfuel('customize-login', $config(array['login-css']));
+ * @example jetfuel('customize-login', $config(array["css-style" => "value"])); 
  * @param   array $config(array['spacer-example'])
  *
  * @link https://developer.wordpress.org/reference/hooks/customize_register/
