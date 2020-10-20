@@ -111,7 +111,6 @@ class CustomizeLogin extends Instance {
           .login h1 a {
             background-image: url( ' . esc_url($logo_url) . ' ) !important;
             padding: 0;
-            margin: 0;
             background-size: inherit;
             width: 100%;
             display: block;
