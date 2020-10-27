@@ -22,7 +22,22 @@ The following plugins are particularly complementary; in fact a notable number o
 ## How To Use ##
 
 * Install Plugin (see below)
-* Add `jetfuel('module-name', ['arbitrary', 'options']);` to `functions.php` (or ideally a file required by `functions.php`)
+* Add `jetfuel('module-name', ['arbitrary', 'options']);` to `functions.php` ...or ideally a file `required()` by `functions.php`, e.g:
+
+```shell
+# functions.php
+$lib_includes = [
+  'lib/mods.php',
+];
+
+foreach ($lib_includes as $file) {
+  if (!$filepath = locate_template($file)) {
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'your-textdomain'), $file), E_USER_ERROR);
+  }
+  require_once $filepath;
+}
+unset($file, $filepath);
+```
     
 @TODO: Add in-depth descriptions of individual modules. Until then, take a peek in [src/Module](src/Module) for available functions.
 
