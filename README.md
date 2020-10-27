@@ -32,7 +32,7 @@ $lib_includes = [
 
 foreach ($lib_includes as $file) {
   if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf(__('Error locating %s for inclusion', 'stdb'), $file), E_USER_ERROR);
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'your-textdomain'), $file), E_USER_ERROR);
   }
   require_once $filepath;
 }
