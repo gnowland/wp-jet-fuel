@@ -4,7 +4,7 @@ Donate link: http://buymeacoff.ee/gnowland
 Tags: functionality, page, menu, image, shortcode, favicon, excerpt, login, archive, attachment, comment, taxonomies, terms, tags, must-have, multi-function
 Stable tag: 2.5.0
 Requires PHP: 5.3.0
-Requires at least: 4.5.0
+Requires at least: 4.0
 Tested up to: 5.5.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
