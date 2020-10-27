@@ -26,7 +26,7 @@ class ChangePostUrl extends Instance {
   }
 
   protected function setup() {
-    $this->setDefaultConfig(get_post_type_archive_link('post'));
+    $this->setDefaultConfig(get_post_field( 'post_name', get_option( 'page_for_posts' )));
     return $this;
   }
 
