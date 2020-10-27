@@ -8,12 +8,13 @@ use Gnowland\JetFuel\Instance;
  * Module: change-post-url
  *
  * Append prefix to Posts permalink
+ * ***Be sure to save/refresh the permalinks in wp-admin after enabling!
  *
  * @example jetfuel('change-post-url', $param(string));
  * @param   string $param A string to append to the Posts URL
  *
- * @link https://developer.wordpress.org/reference/hooks/admin_bar_menu/
- * @link https://www.php.net/manual/en/reserved.variables.server.php
+ * @link https://developer.wordpress.org/reference/hooks/generate_rewrite_rules/
+ * @link https://developer.wordpress.org/reference/hooks/post_link/
  *
  * @package WordPress
  * @subpackage WPJetFuel
