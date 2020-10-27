@@ -306,6 +306,7 @@ class ComposerStaticInit33076b39ec84bddbb06d935cdf6f507d
         'Gnowland\\JetFuel\\Module\\AddEditorCss' => __DIR__ . '/../..' . '/src/Module/AddEditorCss.php',
         'Gnowland\\JetFuel\\Module\\AddImageSizes' => __DIR__ . '/../..' . '/src/Module/AddImageSizes.php',
         'Gnowland\\JetFuel\\Module\\AddShortcodes' => __DIR__ . '/../..' . '/src/Module/AddShortcodes.php',
+        'Gnowland\\JetFuel\\Module\\ChangePostUrl' => __DIR__ . '/../..' . '/src/Module/ChangePostUrl.php',
         'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => __DIR__ . '/../..' . '/src/Module/CustomizeAdminFavicon.php',
         'Gnowland\\JetFuel\\Module\\CustomizeEditor' => __DIR__ . '/../..' . '/src/Module/CustomizeEditor.php',
         'Gnowland\\JetFuel\\Module\\CustomizeExcerpts' => __DIR__ . '/../..' . '/src/Module/CustomizeExcerpts.php',

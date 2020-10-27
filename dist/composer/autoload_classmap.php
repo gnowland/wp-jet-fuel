@@ -278,6 +278,7 @@ return array(
     'Gnowland\\JetFuel\\Module\\AddEditorCss' => $baseDir . '/src/Module/AddEditorCss.php',
     'Gnowland\\JetFuel\\Module\\AddImageSizes' => $baseDir . '/src/Module/AddImageSizes.php',
     'Gnowland\\JetFuel\\Module\\AddShortcodes' => $baseDir . '/src/Module/AddShortcodes.php',
+    'Gnowland\\JetFuel\\Module\\ChangePostUrl' => $baseDir . '/src/Module/ChangePostUrl.php',
     'Gnowland\\JetFuel\\Module\\CustomizeAdminFavicon' => $baseDir . '/src/Module/CustomizeAdminFavicon.php',
     'Gnowland\\JetFuel\\Module\\CustomizeEditor' => $baseDir . '/src/Module/CustomizeEditor.php',
     'Gnowland\\JetFuel\\Module\\CustomizeExcerpts' => $baseDir . '/src/Module/CustomizeExcerpts.php',
