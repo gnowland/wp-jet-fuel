@@ -6,7 +6,7 @@
  * Plugin Name:         WordPress Jet Fuel
  * Plugin URI:          https://github.com/gnowland/wp-jet-fuel
  * Description:         Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons etc.
- * Version:             2.5.1
+ * Version:             2.5.2
  * Author:              Gifford Nowland
  * Author URI:          http://giffordnowland.com/
  *
