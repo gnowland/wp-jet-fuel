@@ -28,14 +28,23 @@ class DeselectUncategorized extends Instance {
     }
 
     protected function hook() {
-        add_action( 'save_post', [$this, 'autoDeselectUncategorized'], 10, 3 );
+        add_action( 'admin_enqueue_scripts', [$this, 'addEditorJs'], 10, 1 );
+
     }
 
-    public function autoDeselectUncategorized( $post_id, $post, $update ) {
-        $categories = get_the_category( $post_id );
-        $default_category = get_cat_name( get_option( 'default_category' ) );
-        if( count( $categories ) >= 2 && in_category( $default_category, $post_id ) ) {
-            wp_remove_object_terms( $post_id, $default_category, 'category' );
+     public function addEditorJs( $hook_suffix ) {
+         if ( $hook_suffix === 'post-new.php' || $hook_suffix === 'post.php' ) {
+            wp_enqueue_script( 
+                'deselect_uncategorized',
+                plugin_dir_url( __DIR__ ) . 'js/deselectUncategorized.js',
+                [ 'lodash', 'wp-api-fetch', 'wp-components', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-url' ],
+                '1.0.0',
+                true
+            );
+
+            wp_localize_script( 'deselect_uncategorized', 'scriptParams', [
+                'defaultCategory' => get_option( 'default_category' )
+            ] );
         }
     }
 }
