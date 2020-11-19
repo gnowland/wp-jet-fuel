@@ -160,3 +160,8 @@ Here's what some intelligent people say on the subject:
 > "We recommend that you always put custom post types in a plugin rather than a theme. This ensures that the user’s content is portable whenever they change their website’s design." &mdash; _[Wordpress.org Plugin Handbook](https://developer.wordpress.org/plugins/custom-post-types-and-taxonomies/registering-custom-post-types/)_
 
 > See also: _[Why Custom Post Types Belong in Plugins](http://justintadlock.com/archives/2013/09/14/why-custom-post-types-belong-in-plugins)_ and _[How to Create Your Own WordPress Functionality Plugin](http://wpcandy.com/teaches/how-to-create-a-functionality-plugin)_ for more supporting evidence behind adding additional site functionality via a plugin instead of a theme's `functions.php` file.
+
+## @TODO: ##
+
+- [Set up @wordpress/scripts](https://developer.wordpress.org/block-editor/tutorials/javascript/js-build-setup/) for block editor (Gutenberg) scripts:
+  - `deselectUncategorized.js`
