@@ -311,6 +311,7 @@ class ComposerStaticInit33076b39ec84bddbb06d935cdf6f507d
         'Gnowland\\JetFuel\\Module\\CustomizeEditor' => __DIR__ . '/../..' . '/src/Module/CustomizeEditor.php',
         'Gnowland\\JetFuel\\Module\\CustomizeExcerpts' => __DIR__ . '/../..' . '/src/Module/CustomizeExcerpts.php',
         'Gnowland\\JetFuel\\Module\\CustomizeLogin' => __DIR__ . '/../..' . '/src/Module/CustomizeLogin.php',
+        'Gnowland\\JetFuel\\Module\\DeselectUncategorized' => __DIR__ . '/../..' . '/src/Module/DeselectUncategorized.php',
         'Gnowland\\JetFuel\\Module\\EnableWidgetTextCode' => __DIR__ . '/../..' . '/src/Module/EnableWidgetTextCode.php',
         'Gnowland\\JetFuel\\Module\\ForceExcerptField' => __DIR__ . '/../..' . '/src/Module/ForceExcerptField.php',
         'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => __DIR__ . '/../..' . '/src/Module/RemoveArchivePrefixes.php',

@@ -283,6 +283,7 @@ return array(
     'Gnowland\\JetFuel\\Module\\CustomizeEditor' => $baseDir . '/src/Module/CustomizeEditor.php',
     'Gnowland\\JetFuel\\Module\\CustomizeExcerpts' => $baseDir . '/src/Module/CustomizeExcerpts.php',
     'Gnowland\\JetFuel\\Module\\CustomizeLogin' => $baseDir . '/src/Module/CustomizeLogin.php',
+    'Gnowland\\JetFuel\\Module\\DeselectUncategorized' => $baseDir . '/src/Module/DeselectUncategorized.php',
     'Gnowland\\JetFuel\\Module\\EnableWidgetTextCode' => $baseDir . '/src/Module/EnableWidgetTextCode.php',
     'Gnowland\\JetFuel\\Module\\ForceExcerptField' => $baseDir . '/src/Module/ForceExcerptField.php',
     'Gnowland\\JetFuel\\Module\\RemoveArchivePrefixes' => $baseDir . '/src/Module/RemoveArchivePrefixes.php',
