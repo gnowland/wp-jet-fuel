@@ -1,6 +1,6 @@
 {
   "name": "wp-jet-fuel",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "license": "MIT",
   "author": "Gifford Nowland",
   "description": "Facilitates the addition of custom functionality to a WordPress website, including Custom Post Types, Meta Fields, Widgets, Taxonomies, Shortcodes, Admin Modificaitons, etc.",
