@@ -38,7 +38,17 @@ foreach ($lib_includes as $file) {
 }
 unset($file, $filepath);
 ```
-    
+
+## Modules ##
+
+### Deselect Uncategorized (Default Category)
+
+```php
+jetfuel('deselect-uncategorized');
+```
+
+![Deselect Uncategorized Screencast](https://raw.githubusercontent.com/gnowland/wp-jet-fuel/master/deselectUncategorized.gif)
+
 @TODO: Add in-depth descriptions of individual modules. Until then, take a peek in [src/Module](src/Module) for available functions.
 
 ## Installation ##
