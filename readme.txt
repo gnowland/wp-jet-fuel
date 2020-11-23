@@ -2,7 +2,7 @@
 Contributors: gnowland
 Donate link: http://buymeacoff.ee/gnowland
 Tags: functionality, page, menu, image, shortcode, favicon, excerpt, login, archive, attachment, comment, taxonomies, terms, tags, must-have, multi-function
-Stable tag: 2.6.0
+Stable tag: 2.6.1
 Requires PHP: 5.3.0
 Requires at least: 4.0
 Tested up to: 5.5.1
