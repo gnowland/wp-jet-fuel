@@ -25,7 +25,9 @@
                                 _.without(terms, termId) :
                                 [...terms, termId];
 
-                            if (newTerms.length === 0 ) {
+                            if (newTerms.length === 0 ||
+                                newTerms.length === 1 && newTerms.indexOf(defaultId) === 0
+                            ) {
                                 newTerms = [defaultId];
                             } else if (newTerms.indexOf(defaultId) !== -1) {
                                 newTerms = _.without(newTerms, defaultId);
